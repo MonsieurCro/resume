@@ -1,0 +1,16 @@
+{
+  "name": "Corentin Trempont | Digital Project Manager",
+  "short_name": "Corentin Trempont",
+  "description": "Hello, I'm a Digital Project Manager based in Brussels, Belgium.",
+  "start_url": ".",
+  "display": "fullscreen",
+  "icons": [
+    {
+      "src": "./assets/profile.jpg",
+      "sizes": "512x512",
+      "type": "image/jpg"
+    }
+  ],
+  "theme_color": "#FFFFFF",
+  "background_color": "#FFFFFF"
+}
