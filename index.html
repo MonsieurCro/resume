@@ -444,17 +444,17 @@
       <hr />
 
       <div class="section_block block_inline">
-        <h5 class="upper"><span>French</span>&nbsp;<span class="second_color">\</span>&nbsp;<span class="bold">Native</span></h5>
+        <h4 class="block_subtitle"><span>French</span>&nbsp;<span class="second_color">\</span>&nbsp;<span class="bold">Native</span></h4>
         <p class="block_text"><i class="fas fa-laugh"></i>&nbsp;<i class="fas fa-laugh"></i>&nbsp;<i class="fas fa-laugh"></i>&nbsp;<i class="fas fa-laugh"></i>&nbsp;<i class="fas fa-laugh"></i>&nbsp;<i class="fas fa-laugh"></i></p>
       </div>
 
       <div class="section_block block_inline">
-        <h5 class="upper"><span>English</span>&nbsp;<span class="second_color">\</span>&nbsp;<span class="bold">C1</span></h5>
+        <h4 class="block_subtitle"><span>English</span>&nbsp;<span class="second_color">\</span>&nbsp;<span class="bold">C1</span></h4>
         <p class="block_text"><i class="fas fa-laugh"></i>&nbsp;<i class="fas fa-laugh"></i>&nbsp;<i class="fas fa-laugh"></i>&nbsp;<i class="fas fa-laugh"></i>&nbsp;<i class="fas fa-laugh"></i>&nbsp;<i class="far fa-meh-blank"></i></p>
       </div>
 
       <div class="section_block block_inline">
-        <h5 class="upper"><span>Dutch</span>&nbsp;<span class="second_color">\</span>&nbsp;<span class="bold">B2</span></h5>
+        <h4 class="block_subtitle"><span>Dutch</span>&nbsp;<span class="second_color">\</span>&nbsp;<span class="bold">B2</span></h4>
         <p class="block_text"><i class="fas fa-laugh"></i>&nbsp;<i class="fas fa-laugh"></i>&nbsp;<i class="fas fa-laugh"></i>&nbsp;<i class="fas fa-laugh"></i>&nbsp;<i class="far fa-meh-blank"></i>&nbsp;<i class="far fa-meh-blank"></i></p>
       </div>
     </div>
@@ -470,14 +470,17 @@
       // Check for progression
       function jsJourney(){
         var distance = $(window).scrollTop() + 1;
+        var em = parseFloat($('body').css('font-size')); //Fix for Chrome mobile
+
         $('.section').each(function(item){
-          if(distance >= $(this).offset().top){
+          if(distance >= ($(this).offset().top - (10 * em))){
             newChapter('#journey a:nth-of-type(' + (item + 1) + ')');
           };
         });
       };
       // Auto-update
       jsJourney();
+
       $(window).on('scroll orientationchange resize', function(){
         jsJourney();
       });
