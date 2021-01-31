@@ -6,9 +6,9 @@
   "display": "fullscreen",
   "icons": [
     {
-      "src": "./assets/profile.jpg",
+      "src": "./assets/favicon.png",
       "sizes": "512x512",
-      "type": "image/jpg"
+      "type": "image/png"
     }
   ],
   "theme_color": "#FFFFFF",
