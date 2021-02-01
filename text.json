@@ -1,0 +1,242 @@
+{
+  "en": {
+    "welcome": {
+      "name": "Corentin&nbsp;Trempont",
+      "job": "Digital&nbsp;Project&nbsp;Manager",
+      "phone": "+32&nbsp;(0)&nbsp;491&nbsp;40&nbsp;17&nbsp;19",
+      "email": "cro.trempont@gmail.com",
+      "linkedin": "linkedin.com/in/corentin-trempont"
+    },
+    "about": {
+      "title": "About&nbsp;me",
+      "description": "Graduated from UCLouvain and passionate about design, I developed a strong taste for innovation that quickly drove me to the world of digital marketing. Always ready to take up new challenges and loving to meet new people, I would gladly know more about you and your objectives. <span class=\"second_color italic\">#FeelFreeToContactMe!</span>"
+    },
+    "experience": {
+      "title": "Work&nbsp;experience",
+      "blocks": [
+        {
+          "title": "<span class=\"second_color_border\">Customer&nbsp;Success <span class=\"second_color\">/</span> Digital&nbsp;Project&nbsp;Manager</span>",
+          "company": "LuckyCycle",
+          "location": "Brussels",
+          "dates": "Jan&nbsp;2018&nbsp;-&nbsp;Present",
+          "content": "<ul class=\"block_text\"><li>Scope project requirements, develop a detailed project plan,  monitor progress and ensure timing and quality standards;</li><li>Highlight potential risks and seek improvement opportunities;</li><li>Collaborate with internal and external teams to design, develop and implement end-to-end digital projects;</li><li>Monitor, report and provide customer support.</li></ul>"
+        },
+        {
+          "title": "<span class=\"second_color_border\">Growth&nbsp;Hacking</span>&nbsp;Internship",
+          "company": "PP&nbsp;Company",
+          "location": "Hainaut",
+          "dates": "Mar&nbsp;2016&nbsp;-&nbsp;Apr&nbsp;2016",
+          "content": "<ul class=\"block_text\"><li>Analysis and contribution to the improvement of the company's online visibility (social&nbsp;networks & SEO&nbsp;/&nbsp;SEA);</li><li>Design, insertion and A/B&nbsp;testing of display ads;</li><li>Development of new offers in order to increase the profitability of a free-to-play online game.</li></ul>"
+        }
+      ]
+    },
+    "education": {
+      "title": "Education",
+      "blocks": [
+        {
+          "title": "Master<span class=\"second_color\">'</span>s&nbsp;Degree in <span class=\"second_color_border\">Business&nbsp;Engineering</span>",
+          "company": "UCLouvain&nbsp;<span class=\"second_color\">\\</span>&nbsp;LSM",
+          "location": "Hainaut",
+          "dates": "Sep&nbsp;2013&nbsp;-&nbsp;Aug&nbsp;2018",
+          "content": "<p class=\"block_text\">Wide-ranging&nbsp;knowledge of management&nbsp;and&nbsp;economics.</p><p class=\"block_text\"><span class=\"second_color\">></span>&nbsp;Majors: Business&nbsp;Analytics <span class=\"second_color\">∙</span> Digital&nbsp;Marketing</p>"
+        },
+        {
+          "title": "C<span class=\"second_color\">.</span>E<span class=\"second_color\">.</span>S<span class=\"second_color\">.</span>S&nbsp;in Science&nbsp;<span class=\"second_color\">/</span>&nbsp;Math",
+          "company": "Saint&nbsp;Joseph&nbsp;Institute",
+          "location": "Hainaut",
+          "dates": "Sep&nbsp;2007&nbsp;-&nbsp;Aug&nbsp;2013",
+          "content": "<p class=\"block_text\">Language immersion with some courses given in Dutch.</p>"
+        }
+      ]
+    },
+    "certifications": {
+      "title": "Certifications",
+      "blocks": [
+        {
+          "title": "<a href=\"https://drive.google.com/file/d/1FYthGa2bysox9FGtcpP2KynPOp-T4uHp/view?usp=sharing\" target=\"_blank\">Digital&nbsp;Marketing&nbsp;Specialist</a> <span class=\"second_color\">/</span> <a href=\"#certifications\" target=\"_blank\">Web&nbsp;Developer</a> <span class=\"second_color\">/</span> <a href=\"https://drive.google.com/file/d/16x_QsK8pi3mPaRPWCT3OPWcy1V74_3XW/view?usp=sharing\" target=\"_blank\">Graphic&nbsp;Designer",
+          "company": "LinkedIn",
+          "dates": "2020&nbsp;-&nbsp;2021"
+        },
+        {
+          "title": "<a href=\"https://drive.google.com/file/d/1jMBWZKzWDvwms95oE-mIGFIGUHAn7O7Q/view?usp=sharing\" target=\"_blank\">Digital&nbsp;Buyer Learning&nbsp;Path (Facebook&nbsp;Ads)</a>",
+          "company": "Facebook",
+          "dates": "2019"
+        },
+        {
+          "title": "<a href=\"https://analytics.google.com/analytics/academy/certificate/IXN6sX4HQo2CkF2LoErRLg\" target=\"_blank\">Google&nbsp;Analytics for Beginners</a>",
+          "company": "Google",
+          "dates": "2017"
+        }
+      ]
+    },
+    "skills": {
+      "title": "",
+      "blocks": [
+        {
+          "title": "Office&nbsp;Suite",
+          "icons": "<i class=\"fas fa-file-word\"></i>&nbsp;<i class=\"fas fa-file-excel\"></i>&nbsp;<i class=\"fas fa-file-powerpoint\"></i>&nbsp;<i class=\"smaller fas fa-plus\"></i>"
+        },
+        {
+          "title": "Adobe&nbsp;Suite",
+          "icons": "<i class=\"fas fa-file-image\"></i>&nbsp;<i class=\"fas fa-magic\"></i>"
+        },
+        {
+          "title": "Web&nbsp;Languages",
+          "icons": "<i class=\"fab fa-html5\"></i>&nbsp;<i class=\"fab fa-css3-alt\"></i>&nbsp;<i class=\"fab fa-js-square\"></i>&nbsp;<i class=\"fab fa-vuejs\"></i>"
+        },
+        {
+          "title": "Facebook&nbsp;Ads",
+          "icons": "<i class=\"fab fa-facebook\"></i>"
+        },
+        {
+          "title": "Google&nbsp;Analytics",
+          "icons": "<i class=\"fab fa-google\"></i>"
+        }
+      ]
+    },
+    "languages": {
+      "title": "Languages",
+      "blocks": [
+        {
+          "title": "French",
+          "level": "Native",
+          "icons": "<i class=\"fas fa-laugh\"></i>&nbsp;<i class=\"fas fa-laugh\"></i>&nbsp;<i class=\"fas fa-laugh\"></i>&nbsp;<i class=\"fas fa-laugh\"></i>&nbsp;<i class=\"fas fa-laugh\"></i>&nbsp;<i class=\"fas fa-laugh\"></i>"
+        },
+        {
+          "title": "English",
+          "level": "C1",
+          "icons": "<i class=\"fas fa-laugh\"></i>&nbsp;<i class=\"fas fa-laugh\"></i>&nbsp;<i class=\"fas fa-laugh\"></i>&nbsp;<i class=\"fas fa-laugh\"></i>&nbsp;<i class=\"fas fa-laugh\"></i>&nbsp;<i class=\"far fa-meh-blank\"></i>"
+        },
+        {
+          "title": "Dutch",
+          "level": "B2",
+          "icons": "<i class=\"fas fa-laugh\"></i>&nbsp;<i class=\"fas fa-laugh\"></i>&nbsp;<i class=\"fas fa-laugh\"></i>&nbsp;<i class=\"fas fa-laugh\"></i>&nbsp;<i class=\"far fa-meh-blank\"></i>&nbsp;<i class=\"far fa-meh-blank\"></i>"
+        }
+      ]
+    },
+    "portfolio": {
+      "title": "Portfolio",
+      "button": "My&nbsp;works"
+    }
+  },
+  "fr": {
+    "welcome": {
+      "name": "Corentin&nbsp;Trempont",
+      "job": "Chef&nbsp;de Projet&nbsp;Digital",
+      "phone": "+32&nbsp;(0)&nbsp;491&nbsp;40&nbsp;17&nbsp;19",
+      "email": "cro.trempont@gmail.com",
+      "linkedin": "linkedin.com/in/corentin-trempont"
+    },
+    "about": {
+      "title": "À&nbsp;propos",
+      "description": "Diplômé de l’UCLouvain et passionné par le design, je me suis vite tourné vers le monde du marketing digital, poussé par mon goût prononcé pour l’innovation. Toujours prêt à relever de nouveaux défis et aimant rencontrer de nouvelles personnes, je serais heureux d’en savoir plus sur vous et vos objectifs. <span class=\"second_color italic\">#NHésitezPasÀMeContacter!</span>"
+    },
+    "experience": {
+      "title": "Expérience",
+      "blocks": [
+        {
+          "title": "<span class=\"second_color_border\">Customer&nbsp;Success&nbsp;Manager <span class=\"second_color\">/</span> Chef&nbsp;de&nbsp;Project&nbsp;Digital</span>",
+          "company": "LuckyCycle",
+          "location": "Bruxelles",
+          "dates": "Janvier&nbsp;2018&nbsp;à&nbsp;aujourd'hui",
+          "content": "<ul class=\"block_text\"><li>Définir les spécifications du projet, élaborer un plan de projet détaillé, suivre les progrès et assurer le respect des délais et des normes de qualité&nbsp;;</li><li>Mettre en évidence les risques potentiels et rechercher les possibilités d'amélioration&nbsp;;</li><li>Collaborer avec les équipes internes et externes pour concevoir, développer et mettre en œuvre des projets numériques de bout en bout&nbsp;;</li><li>Contrôler, rapporter et fournir une assistance aux clients.</li></ul>"
+        },
+        {
+          "title": "Stage&nbsp;en&nbsp;<span class=\"second_color_border\">Growth&nbsp;Hacking</span>",
+          "company": "PP&nbsp;Company",
+          "location": "Hainaut",
+          "dates": "Mars&nbsp;2016&nbsp;à&nbsp;Avril&nbsp;2016",
+          "content": "<ul class=\"block_text\"><li><li>Analyse et contribution à l'amélioration de la visibilité en ligne de l'entreprise (réseaux&nbsp;sociaux & SEO&nbsp;/&nbsp;SEA)&nbsp;</li><li>Conception, insertion et tests&nbsp;A/B de publicités&nbsp;</li><li>Élaboration de nouvelles offres afin d'augmenter la rentabilité d'un jeu en ligne «&nbsp;free-to-play&nbsp;».</li></ul>"
+        }
+      ]
+    },
+    "education": {
+      "title": "Éducation",
+      "blocks": [
+        {
+          "title": "Master&nbsp;en <span class=\"second_color_border\">Ingéniorat&nbsp;de&nbsp;gestion</span>",
+          "company": "UCLouvain&nbsp;<span class=\"second_color\">\\</span>&nbsp;LSM",
+          "location": "Hainaut",
+          "dates": "Septembre&nbsp;2013&nbsp;à&nbsp;Août&nbsp;2018",
+          "content": "<p class=\"block_text\">Connaissance&nbsp;transversale du&nbsp;management et de&nbsp;l'économie.</p><p class=\"block_text\"><span class=\"second_color\">></span>&nbsp;Spécialisations&nbsp;: Business&nbsp;Analytics <span class=\"second_color\">∙</span> Digital&nbsp;Marketing</p>"
+        },
+        {
+          "title": "C<span class=\"second_color\">.</span>E<span class=\"second_color\">.</span>S<span class=\"second_color\">.</span>S&nbsp;en Sciences&nbsp;<span class=\"second_color\">/</span>&nbsp;Math",
+          "company": "Institut&nbsp;Saint&nbsp;Joseph",
+          "location": "Hainaut",
+          "dates": "Septembre&nbsp;2007&nbsp;à&nbsp;Août&nbsp;2013",
+          "content": "<p class=\"block_text\">Immersion&nbsp;linguistique avec certains cours donnés en néerlandais.</p>"
+        }
+      ]
+    },
+    "certifications": {
+      "title": "Certifications",
+      "blocks": [
+        {
+          "title": "<a href=\"https://drive.google.com/file/d/1FYthGa2bysox9FGtcpP2KynPOp-T4uHp/view?usp=sharing\" target=\"_blank\">Digital&nbsp;Marketing&nbsp;Specialist</a> <span class=\"second_color\">/</span> <a href=\"#certifications\" target=\"_blank\">Web&nbsp;Developer</a> <span class=\"second_color\">/</span> <a href=\"https://drive.google.com/file/d/16x_QsK8pi3mPaRPWCT3OPWcy1V74_3XW/view?usp=sharing\" target=\"_blank\">Graphic&nbsp;Designer",
+          "company": "LinkedIn",
+          "dates": "2020&nbsp;-&nbsp;2021"
+        },
+        {
+          "title": "<a href=\"https://drive.google.com/file/d/1jMBWZKzWDvwms95oE-mIGFIGUHAn7O7Q/view?usp=sharing\" target=\"_blank\">Digital&nbsp;Buyer Learning&nbsp;Path (Facebook&nbsp;Ads)</a>",
+          "company": "Facebook",
+          "dates": "2019"
+        },
+        {
+          "title": "<a href=\"https://analytics.google.com/analytics/academy/certificate/IXN6sX4HQo2CkF2LoErRLg\" target=\"_blank\">Google&nbsp;Analytics for Beginners</a>",
+          "company": "Google",
+          "dates": "2017"
+        }
+      ]
+    },
+    "skills": {
+      "title": "Compétences",
+      "blocks": [
+        {
+          "title": "Suite&nbsp;Office",
+          "icons": "<i class=\"fas fa-file-word\"></i>&nbsp;<i class=\"fas fa-file-excel\"></i>&nbsp;<i class=\"fas fa-file-powerpoint\"></i>&nbsp;<i class=\"smaller fas fa-plus\"></i>"
+        },
+        {
+          "title": "Suite&nbsp;Adobe",
+          "icons": "<i class=\"fas fa-file-image\"></i>&nbsp;<i class=\"fas fa-magic\"></i>"
+        },
+        {
+          "title": "Languages&nbsp;Web",
+          "icons": "<i class=\"fab fa-html5\"></i>&nbsp;<i class=\"fab fa-css3-alt\"></i>&nbsp;<i class=\"fab fa-js-square\"></i>&nbsp;<i class=\"fab fa-vuejs\"></i>"
+        },
+        {
+          "title": "Facebook&nbsp;Ads",
+          "icons": "<i class=\"fab fa-facebook\"></i>"
+        },
+        {
+          "title": "Google&nbsp;Analytics",
+          "icons": "<i class=\"fab fa-google\"></i>"
+        }
+      ]
+    },
+    "languages": {
+      "title": "Langues",
+      "blocks": [
+        {
+          "title": "Français",
+          "level": "Natif",
+          "icons": "<i class=\"fas fa-laugh\"></i>&nbsp;<i class=\"fas fa-laugh\"></i>&nbsp;<i class=\"fas fa-laugh\"></i>&nbsp;<i class=\"fas fa-laugh\"></i>&nbsp;<i class=\"fas fa-laugh\"></i>&nbsp;<i class=\"fas fa-laugh\"></i>"
+        },
+        {
+          "title": "Anglais",
+          "level": "C1",
+          "icons": "<i class=\"fas fa-laugh\"></i>&nbsp;<i class=\"fas fa-laugh\"></i>&nbsp;<i class=\"fas fa-laugh\"></i>&nbsp;<i class=\"fas fa-laugh\"></i>&nbsp;<i class=\"fas fa-laugh\"></i>&nbsp;<i class=\"far fa-meh-blank\"></i>"
+        },
+        {
+          "title": "Néerlandais",
+          "level": "B2",
+          "icons": "<i class=\"fas fa-laugh\"></i>&nbsp;<i class=\"fas fa-laugh\"></i>&nbsp;<i class=\"fas fa-laugh\"></i>&nbsp;<i class=\"fas fa-laugh\"></i>&nbsp;<i class=\"far fa-meh-blank\"></i>&nbsp;<i class=\"far fa-meh-blank\"></i>"
+        }
+      ]
+    },
+    "portfolio": {
+      "title": "Portfolio",
+      "button": "Mes&nbsp;réalisations"
+    }
+  }
+}

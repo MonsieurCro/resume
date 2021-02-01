@@ -466,7 +466,6 @@
 
   <script>
     $(document).ready(function(){
-      // Check for progression
       function jsJourney(){
         var distance = $(window).scrollTop() + 1;
         var em = parseFloat($('body').css('font-size'));
@@ -480,21 +479,6 @@
       };
       jsJourney();
       $(window).on('scroll orientationchange resize', function(){ jsJourney(); });
-
-      // Check language
-      function getURLParameter(item){
-        return decodeURIComponent((new RegExp('[?|&]' + item + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null;
-      };
-      var lang = getURLParameter('lang') || 'en';
-      console.log(lang);
-
-      // Import texts
-      var text = $.getJSON('./text.json', function(){});
-      console.log(text);
-
-      // $.each(texts[lang], function(name, val){
-      //   $("#" + name).text(val);
-      // });
     });
   </script>
 </body>
