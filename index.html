@@ -156,6 +156,13 @@
     .next:hover {
       color: #E39825; background-color: #225794;
     }
+    #toggle {
+      position: fixed;
+      top: .5em; right: .625em; bottom: auto; left: auto;
+      z-index: 10000;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
     #journey {
       position: fixed;
       right: .625em; top: 50%; left: auto; bottom: auto;
@@ -274,16 +281,19 @@
   </style>
 </head>
 <body>
+  <!-- Toggle -->
+  <div id="toggle" data-translate="toggle"></div>
+
   <!-- Journey -->
   <div id="journey">
     <a href="#welcome" target="_self" class="bigger current"><span class="smaller">Corentin&nbsp;Trempont</span>&nbsp;<i class="fas fa-circle"></i></a>
-    <a href="#about" target="_self" class="bigger"><span class="smaller">About&nbsp;me</span>&nbsp;<i class="far fa-circle"></i></a>
-    <a href="#experience" target="_self" class="bigger"><span class="smaller">Work&nbsp;experience</span>&nbsp;<i class="far fa-circle"></i></a>
-    <a href="#education" target="_self" class="bigger"><span class="smaller">Education</span>&nbsp;<i class="far fa-circle"></i></a>
-    <a href="#certifications" target="_self" class="bigger"><span class="smaller">Certifications</span>&nbsp;<i class="far fa-circle"></i></a>
-    <a href="#skills" target="_self" class="bigger"><span class="smaller">Skills</span>&nbsp;<i class="far fa-circle"></i></a>
-    <a href="#languages" target="_self" class="bigger"><span class="smaller">Languages</span>&nbsp;<i class="far fa-circle"></i></a>
-    <a href="#portfolio" target="_self" class="bigger"><span class="smaller">Portfolio</span>&nbsp;<i class="far fa-check-circle"></i></a>
+    <a href="#about" target="_self" class="bigger"><span class="smaller" data-translate="about.title">About&nbsp;me</span>&nbsp;<i class="far fa-circle"></i></a>
+    <a href="#experience" target="_self" class="bigger"><span class="smaller" data-translate="experience.title">Work&nbsp;experience</span>&nbsp;<i class="far fa-circle"></i></a>
+    <a href="#education" target="_self" class="bigger"><span class="smaller" data-translate="education.title">Education</span>&nbsp;<i class="far fa-circle"></i></a>
+    <a href="#certifications" target="_self" class="bigger"><span class="smaller" data-translate="certifications.title">Certifications</span>&nbsp;<i class="far fa-circle"></i></a>
+    <a href="#skills" target="_self" class="bigger"><span class="smaller" data-translate="skills.title">Skills</span>&nbsp;<i class="far fa-circle"></i></a>
+    <a href="#languages" target="_self" class="bigger"><span class="smaller" data-translate="languages.title">Languages</span>&nbsp;<i class="far fa-circle"></i></a>
+    <a href="#portfolio" target="_self" class="bigger"><span class="smaller" data-translate="portfolio.title">Portfolio</span>&nbsp;<i class="far fa-check-circle"></i></a>
   </div>
 
   <!-- Header -->
@@ -312,11 +322,11 @@
   <!-- About -->
   <div id="about" class="section">
     <div class="container">
-      <h2 class="section_title">About&nbsp;me</h2>
+      <h2 class="section_title" data-translate="about.title">About&nbsp;me</h2>
       <hr />
 
       <div class="section_block">
-        <p class="block_text justified">Graduated from UCLouvain and passionate about design, I developed a strong taste for innovation that quickly drove me to the world of digital marketing. Always ready to take up new challenges and loving to meet new people, I would gladly know more about you and your objectives. <span class="second_color italic">#FeelFreeToContactMe!</span></p>
+        <p class="block_text justified" data-translate="about.description">Graduated from UCLouvain and passionate about design, I developed a strong taste for innovation that quickly drove me to the world of digital marketing. Always ready to take up new challenges and loving to meet new people, I would gladly know more about you and your objectives. <span class="second_color italic">#FeelFreeToContactMe!</span></p>
       </div>
 
       <a href="#experience" target="_self"><div class="next"><i class="fas fa-angle-double-down"></i></div></a>
@@ -326,28 +336,32 @@
   <!-- Experience -->
   <div id="experience" class="section">
     <div class="container">
-      <h2 class="section_title">Work&nbsp;experience</h2>
+      <h2 class="section_title" data-translate="experience.title">Work&nbsp;experience</h2>
       <hr />
 
       <div class="section_block">
-        <h3 class="block_title"><span class="second_color_border">Customer&nbsp;Success <span class="second_color">/</span> Digital&nbsp;Project&nbsp;Manager</span></h3>
-        <h5 class="block_info"><span class="upper">LuckyCycle</span> | Brussels | Jan&nbsp;2018&nbsp;-&nbsp;Present</h5>
-        <ul class="block_text">
-          <li>Scope project requirements, develop a detailed project plan,  monitor progress and ensure timing and quality standards;</li>
-          <li>Highlight potential risks and seek improvement opportunities;</li>
-          <li>Collaborate with internal and external teams to design, develop and implement end-to-end digital projects;</li>
-          <li>Monitor, report and provide customer support.</li>
-        </ul>
+        <h3 class="block_title" data-translate="experience.blocks.0.title"><span class="second_color_border">Customer&nbsp;Success <span class="second_color">/</span> Digital&nbsp;Project&nbsp;Manager</span></h3>
+        <h5 class="block_info"><span class="upper" data-translate="experience.blocks.0.company">LuckyCycle</span> | <span data-translate="experience.blocks.0.location">Brussels</span> | <span data-translate="experience.blocks.0.dates">Jan&nbsp;2018&nbsp;-&nbsp;Present</span></h5>
+        <div data-translate="experience.blocks.0.content">
+          <ul class="block_text">
+            <li>Scope project requirements, develop a detailed project plan,  monitor progress and ensure timing and quality standards;</li>
+            <li>Highlight potential risks and seek improvement opportunities;</li>
+            <li>Collaborate with internal and external teams to design, develop and implement end-to-end digital projects;</li>
+            <li>Monitor, report and provide customer support.</li>
+          </ul>
+        </div>
       </div>
 
       <div class="section_block">
-        <h3 class="block_title"><span class="second_color_border">Growth&nbsp;Hacking</span>&nbsp;Internship</h3>
-        <h5 class="block_info"><span class="upper">PP&nbsp;Company</span> | Hainaut | Mar&nbsp;2016&nbsp;-&nbsp;Apr&nbsp;2016</h5>
-        <ul class="block_text">
-          <li>Analysis and contribution to the improvement of the company's online visibility (social&nbsp;networks & SEO&nbsp;/&nbsp;SEA);</li>
-          <li>Design, insertion and A/B&nbsp;testing of display ads;</li>
-          <li>Development of new offers in order to increase the profitability of a free-to-play online game.</li>
-        </ul>
+        <h3 class="block_title" data-translate="experience.blocks.1.title"><span class="second_color_border">Growth&nbsp;Hacking</span>&nbsp;Internship</h3>
+        <h5 class="block_info"><span class="upper" data-translate="experience.blocks.1.company">PP&nbsp;Company</span> | <span data-translate="experience.blocks.1.location">Hainaut</span> | <span data-translate="experience.blocks.1.dates">Mar&nbsp;2016&nbsp;-&nbsp;Apr&nbsp;2016</span></h5>
+        <div data-translate="experience.blocks.1.content">
+          <ul class="block_text">
+            <li>Analysis and contribution to the improvement of the company's online visibility (social&nbsp;networks & SEO&nbsp;/&nbsp;SEA);</li>
+            <li>Design, insertion and A/B&nbsp;testing of display ads;</li>
+            <li>Development of new offers in order to increase the profitability of a free-to-play online game.</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -355,20 +369,24 @@
   <!-- Education -->
   <div id="education" class="section">
     <div class="container">
-      <h2 class="section_title">Education</h2>
+      <h2 class="section_title" data-translate="education.title">Education</h2>
       <hr />
 
       <div class="section_block">
-        <h3 class="block_title">Master<span class="second_color">'</span>s&nbsp;Degree in <span class="second_color_border">Business&nbsp;Engineering</span></h3>
-        <h5 class="block_info"><span class="upper">UCLouvain&nbsp;<span class="second_color">\</span>&nbsp;LSM</span> | Hainaut | Sep&nbsp;2013&nbsp;-&nbsp;Aug&nbsp;2018</h5>
-        <p class="block_text">Wide-ranging&nbsp;knowledge of management&nbsp;and&nbsp;economics.</p>
-        <p class="block_text"><span class="second_color">></span>&nbsp;Majors: Business&nbsp;Analytics <span class="second_color">∙</span> Digital&nbsp;Marketing</p>
+        <h3 class="block_title" data-translate="education.blocks.0.title">Master<span class="second_color">'</span>s&nbsp;Degree in <span class="second_color_border">Business&nbsp;Engineering</span></h3>
+        <h5 class="block_info"><span class="upper" data-translate="education.blocks.0.company">UCLouvain&nbsp;<span class="second_color">\</span>&nbsp;LSM</span> | <span data-translate="education.blocks.0.location">Hainaut</span> | <span data-translate="education.blocks.0.dates">Sep&nbsp;2013&nbsp;-&nbsp;Aug&nbsp;2018</span></h5>
+        <div data-translate="education.blocks.0.content">
+          <p class="block_text">Wide-ranging&nbsp;knowledge of management&nbsp;and&nbsp;economics.</p>
+          <p class="block_text"><span class="second_color">></span>&nbsp;Majors: Business&nbsp;Analytics <span class="second_color">∙</span> Digital&nbsp;Marketing</p>
+        </div>
       </div>
 
       <div class="section_block">
-        <h3 class="block_title">C<span class="second_color">.</span>E<span class="second_color">.</span>S<span class="second_color">.</span>S&nbsp;in Science&nbsp;<span class="second_color">/</span>&nbsp;Math</h3>
-        <h5 class="block_info"><span class="upper">Saint&nbsp;Joseph&nbsp;Institute</span> | Hainaut | Sep&nbsp;2007&nbsp;-&nbsp;Aug&nbsp;2013</h5>
-        <p class="block_text">Language immersion with some courses given in Dutch.</p>
+        <h3 class="block_title" data-translate="education.blocks.1.title">C<span class="second_color">.</span>E<span class="second_color">.</span>S<span class="second_color">.</span>S&nbsp;in Science&nbsp;<span class="second_color">/</span>&nbsp;Math</h3>
+        <h5 class="block_info"><span class="upper" data-translate="education.blocks.1.company">Saint&nbsp;Joseph&nbsp;Institute</span> | <span data-translate="education.blocks.1.location">Hainaut</span> | <span data-translate="education.blocks.1.dates">Sep&nbsp;2007&nbsp;-&nbsp;Aug&nbsp;2013</span></h5>
+        <div data-translate="education.blocks.1.content">
+          <p class="block_text">Language immersion with some courses given in Dutch.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -376,22 +394,22 @@
   <!-- Certifications -->
   <div id="certifications" class="section">
     <div class="container">
-      <h2 class="section_title">Certifications</h2>
+      <h2 class="section_title" data-translate="certifications.title">Certifications</h2>
       <hr />
 
       <div class="section_block">
-        <h4 class="block_subtitle"><span class="second_color">+</span>&nbsp;<a href="https://drive.google.com/file/d/1FYthGa2bysox9FGtcpP2KynPOp-T4uHp/view?usp=sharing" target="_blank">Digital&nbsp;Marketing&nbsp;Specialist</a> <span class="second_color">/</span> <a href="#certifications" target="_blank">Web&nbsp;Developer</a> <span class="second_color">/</span> <a href="https://drive.google.com/file/d/16x_QsK8pi3mPaRPWCT3OPWcy1V74_3XW/view?usp=sharing" target="_blank">Graphic&nbsp;Designer&nbsp;</a><span class="second_color">+</span></h4>
-        <h5 class="block_info">LinkedIn | 2020&nbsp;-&nbsp;2021</h5>
+        <h4 class="block_subtitle"><span class="second_color">+</span>&nbsp;<span data-translate="certifications.blocks.0.title"><a href="https://drive.google.com/file/d/1FYthGa2bysox9FGtcpP2KynPOp-T4uHp/view?usp=sharing" target="_blank">Digital&nbsp;Marketing&nbsp;Specialist</a> <span class="second_color">/</span> <a href="#certifications" target="_blank">Web&nbsp;Developer</a> <span class="second_color">/</span> <a href="https://drive.google.com/file/d/16x_QsK8pi3mPaRPWCT3OPWcy1V74_3XW/view?usp=sharing" target="_blank">Graphic&nbsp;Designer</a></span>&nbsp;<span class="second_color">+</span></h4>
+        <h5 class="block_info"><span data-translate="certifications.blocks.0.company">LinkedIn</span> | <span data-translate="certifications.blocks.0.dates">2020&nbsp;-&nbsp;2021</span></h5>
       </div>
 
       <div class="section_block">
-        <h4 class="block_subtitle"><span class="second_color">+</span>&nbsp;<a href="https://drive.google.com/file/d/1jMBWZKzWDvwms95oE-mIGFIGUHAn7O7Q/view?usp=sharing" target="_blank">Digital&nbsp;Buyer Learning&nbsp;Path (Facebook&nbsp;Ads)</a>&nbsp;<span class="second_color">+</span></h4>
-        <h5 class="block_info">Facebook | 2019</h5>
+        <h4 class="block_subtitle"><span class="second_color">+</span>&nbsp;<span data-translate="certifications.blocks.1.title"><a href="https://drive.google.com/file/d/1jMBWZKzWDvwms95oE-mIGFIGUHAn7O7Q/view?usp=sharing" target="_blank">Digital&nbsp;Buyer Learning&nbsp;Path (Facebook&nbsp;Ads)</a></span>&nbsp;<span class="second_color">+</span></h4>
+        <h5 class="block_info"><span data-translate="certifications.blocks.1.company">Facebook</span> | <span data-translate="certifications.blocks.1.dates">2019</span></h5>
       </div>
 
       <div class="section_block">
-        <h4 class="block_subtitle"><span class="second_color">+</span>&nbsp;<a href="https://analytics.google.com/analytics/academy/certificate/IXN6sX4HQo2CkF2LoErRLg" target="_blank">Google&nbsp;Analytics for Beginners</a>&nbsp;<span class="second_color">+</span></h4>
-        <h5 class="block_info">Google | 2017</h5>
+        <h4 class="block_subtitle"><span class="second_color">+</span>&nbsp;<span data-translate="certifications.blocks.2.title"><a href="https://analytics.google.com/analytics/academy/certificate/IXN6sX4HQo2CkF2LoErRLg" target="_blank">Google&nbsp;Analytics for Beginners</a></span>&nbsp;<span class="second_color">+</span></h4>
+        <h5 class="block_info"><span data-translate="certifications.blocks.2.company">Google</span> | <span data-translate="certifications.blocks.2.dates">2017</span></h5>
       </div>
     </div>
   </div>
@@ -399,29 +417,29 @@
   <!-- Skills -->
   <div id="skills" class="section">
     <div class="container">
-      <h2 class="section_title">Skills</h2>
+      <h2 class="section_title" data-translate="skills.title">Skills</h2>
       <hr />
 
       <div class="column">
         <div class="section_block">
-          <h4 class="block_subtitle">Office&nbsp;Suite&nbsp;[&nbsp;<i class="fas fa-file-word"></i>&nbsp;<i class="fas fa-file-excel"></i>&nbsp;<i class="fas fa-file-powerpoint"></i>&nbsp;<i class="smaller fas fa-plus"></i>&nbsp;]</h4>
+          <h4 class="block_subtitle"><span data-translate="skills.blocks.0.title">Office&nbsp;Suite</span>&nbsp;[&nbsp;<span data-translate="skills.blocks.0.icons"><i class="fas fa-file-word"></i>&nbsp;<i class="fas fa-file-excel"></i>&nbsp;<i class="fas fa-file-powerpoint"></i>&nbsp;<i class="smaller fas fa-plus"></i></span>&nbsp;]</h4>
         </div>
 
         <div class="section_block">
-          <h4 class="block_subtitle">Adobe&nbsp;Suite&nbsp;[&nbsp;<i class="fas fa-file-image"></i>&nbsp;<i class="fas fa-magic"></i>&nbsp;]</h4>
+          <h4 class="block_subtitle"><span data-translate="skills.blocks.1.title">Adobe&nbsp;Suite</span>&nbsp;[&nbsp;<span data-translate="skills.blocks.1.icons"><i class="fas fa-file-image"></i>&nbsp;<i class="fas fa-magic"></i></span>&nbsp;]</h4>
         </div>
 
         <div class="section_block">
-          <h4 class="block_subtitle">Web&nbsp;Languages&nbsp;[&nbsp;<i class="fab fa-html5"></i>&nbsp;<i class="fab fa-css3-alt"></i>&nbsp;<i class="fab fa-js-square"></i>&nbsp;<i class="fab fa-vuejs"></i>&nbsp;]</h4>
+          <h4 class="block_subtitle"><span data-translate="skills.blocks.2.title">Web&nbsp;Languages</span>&nbsp;[&nbsp;<span data-translate="skills.blocks.2.icons"><i class="fab fa-html5"></i>&nbsp;<i class="fab fa-css3-alt"></i>&nbsp;<i class="fab fa-js-square"></i>&nbsp;<i class="fab fa-vuejs"></i></span>&nbsp;]</h4>
         </div>
       </div
       ><div class="column">
         <div class="section_block">
-          <h4 class="block_subtitle">Facebook&nbsp;Ads&nbsp;[&nbsp;<i class="fab fa-facebook"></i>&nbsp;]</h4>
+          <h4 class="block_subtitle"><span data-translate="skills.blocks.3.title">Facebook&nbsp;Ads</span>&nbsp;[&nbsp;<span data-translate="skills.blocks.3.icons"><i class="fab fa-facebook"></i></span>&nbsp;]</h4>
         </div>
 
         <div class="section_block">
-          <h4 class="block_subtitle">Google&nbsp;Analytics&nbsp;[&nbsp;<i class="fab fa-google"></i>&nbsp;]</h4>
+          <h4 class="block_subtitle"><span data-translate="skills.blocks.4.title">Google&nbsp;Analytics</span>&nbsp;[&nbsp;<span data-translate="skills.blocks.4.icons"><i class="fab fa-google"></i></span>&nbsp;]</h4>
         </div>
       </div>
 
@@ -432,22 +450,22 @@
   <!-- Languages -->
   <div id="languages" class="section">
     <div class="container">
-      <h2 class="section_title">Languages</h2>
+      <h2 class="section_title" data-translate="languages.title">Languages</h2>
       <hr />
 
       <div class="section_block block_inline">
-        <h4 class="block_subtitle"><span>French</span>&nbsp;<span class="second_color">\</span>&nbsp;<span class="bold">Native</span></h4>
-        <p class="block_text"><i class="fas fa-laugh"></i>&nbsp;<i class="fas fa-laugh"></i>&nbsp;<i class="fas fa-laugh"></i>&nbsp;<i class="fas fa-laugh"></i>&nbsp;<i class="fas fa-laugh"></i>&nbsp;<i class="fas fa-laugh"></i></p>
+        <h4 class="block_subtitle"><span data-translate="languages.blocks.0.title">French</span>&nbsp;<span class="second_color">\</span>&nbsp;<span class="bold" data-translate="languages.blocks.0.level">Native</span></h4>
+        <p class="block_text" data-translate="languages.blocks.0.icons"><i class="fas fa-laugh"></i>&nbsp;<i class="fas fa-laugh"></i>&nbsp;<i class="fas fa-laugh"></i>&nbsp;<i class="fas fa-laugh"></i>&nbsp;<i class="fas fa-laugh"></i>&nbsp;<i class="fas fa-laugh"></i></p>
       </div>
 
       <div class="section_block block_inline">
-        <h4 class="block_subtitle"><span>English</span>&nbsp;<span class="second_color">\</span>&nbsp;<span class="bold">C1</span></h4>
-        <p class="block_text"><i class="fas fa-laugh"></i>&nbsp;<i class="fas fa-laugh"></i>&nbsp;<i class="fas fa-laugh"></i>&nbsp;<i class="fas fa-laugh"></i>&nbsp;<i class="fas fa-laugh"></i>&nbsp;<i class="far fa-meh-blank"></i></p>
+        <h4 class="block_subtitle"><span data-translate="languages.blocks.1.title">English</span>&nbsp;<span class="second_color">\</span>&nbsp;<span class="bold" data-translate="languages.blocks.1.level">C1</span></h4>
+        <p class="block_text" data-translate="languages.blocks.1.icons"><i class="fas fa-laugh"></i>&nbsp;<i class="fas fa-laugh"></i>&nbsp;<i class="fas fa-laugh"></i>&nbsp;<i class="fas fa-laugh"></i>&nbsp;<i class="fas fa-laugh"></i>&nbsp;<i class="far fa-meh-blank"></i></p>
       </div>
 
       <div class="section_block block_inline">
-        <h4 class="block_subtitle"><span>Dutch</span>&nbsp;<span class="second_color">\</span>&nbsp;<span class="bold">B2</span></h4>
-        <p class="block_text"><i class="fas fa-laugh"></i>&nbsp;<i class="fas fa-laugh"></i>&nbsp;<i class="fas fa-laugh"></i>&nbsp;<i class="fas fa-laugh"></i>&nbsp;<i class="far fa-meh-blank"></i>&nbsp;<i class="far fa-meh-blank"></i></p>
+        <h4 class="block_subtitle"><span data-translate="languages.blocks.2.title">Dutch</span>&nbsp;<span class="second_color">\</span>&nbsp;<span class="bold" data-translate="languages.blocks.2.level">B2</span></h4>
+        <p class="block_text" data-translate="languages.blocks.2.icons"><i class="fas fa-laugh"></i>&nbsp;<i class="fas fa-laugh"></i>&nbsp;<i class="fas fa-laugh"></i>&nbsp;<i class="fas fa-laugh"></i>&nbsp;<i class="far fa-meh-blank"></i>&nbsp;<i class="far fa-meh-blank"></i></p>
       </div>
     </div>
   </div>
@@ -455,18 +473,18 @@
   <!-- Portfolio -->
   <div id="portfolio" class="section">
     <div class="container">
-      <h2 class="section_title">Portfolio</h2>
+      <h2 class="section_title" data-translate="portfolio.title">Portfolio</h2>
       <hr />
 
       <a href="./portfolio/" target="_blank"><div class="section_block block_inline block_button">
-        <span class="upper"><i class="smaller far fa-folder fa-fw"></i>&nbsp;My&nbsp;works</span>
+        <span class="upper"><i class="smaller far fa-folder fa-fw"></i>&nbsp;<span data-translate="portfolio.button">My&nbsp;works</span></span>
       </div></a>
     </div>
   </div>
 
   <script>
     $(document).ready(function(){
-      // Check for progression
+      // Check progression
       function jsJourney(){
         var distance = $(window).scrollTop() + 1;
         var em = parseFloat($('body').css('font-size'));
@@ -481,20 +499,38 @@
       jsJourney();
       $(window).on('scroll orientationchange resize', function(){ jsJourney(); });
 
-      // Check language
+      // Display copy
+      var lang = 'en'; var strings = {}; var langs = ['en'];
+
       function getURLParameter(item){
         return decodeURIComponent((new RegExp('[?|&]' + item + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null;
       };
-      var lang = getURLParameter('lang') || 'en';
-      console.log(lang);
+      function jsonItem(obj, str){
+        var strs = str.split('.');
+        var first = strs.shift();
+        if(!obj[first]) return null;
+        if(strs.length) return jsonItem(obj[first], strs.join('.'));
+        return obj[first];
+      };
+      function copyTranslation(copy, lang){
+        $('[data-translate]').each(function(){
+          var item = $(this).data('translate');
+          var content = jsonItem(copy[lang], item);
+          $(this).html(content);
+        });
+      };
 
-      // Import texts
-      var text = $.getJSON('./text.json', function(){});
-      console.log(text);
+      $.getJSON('./strings.json', function(data){
+        strings = data;
+        var langs = Object.keys(strings);
+        lang = $.inArray(getURLParameter('lang'), langs) > -1 ? getURLParameter('lang') : 'en';
+        copyTranslation(strings, lang);
 
-      // $.each(texts[lang], function(name, val){
-      //   $("#" + name).text(val);
-      // });
+        $('#toggle').click(function(){
+          lang = $.inArray($(this).text(), langs) > -1 ? $(this).text() : 'en';
+          copyTranslation(strings, lang);
+        });
+      });
     });
   </script>
 </body>

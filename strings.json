@@ -1,12 +1,6 @@
 {
   "en": {
-    "welcome": {
-      "name": "Corentin&nbsp;Trempont",
-      "job": "Digital&nbsp;Project&nbsp;Manager",
-      "phone": "+32&nbsp;(0)&nbsp;491&nbsp;40&nbsp;17&nbsp;19",
-      "email": "cro.trempont@gmail.com",
-      "linkedin": "linkedin.com/in/corentin-trempont"
-    },
+    "toggle": "fr",
     "about": {
       "title": "About&nbsp;me",
       "description": "Graduated from UCLouvain and passionate about design, I developed a strong taste for innovation that quickly drove me to the world of digital marketing. Always ready to take up new challenges and loving to meet new people, I would gladly know more about you and your objectives. <span class=\"second_color italic\">#FeelFreeToContactMe!</span>"
@@ -120,13 +114,7 @@
     }
   },
   "fr": {
-    "welcome": {
-      "name": "Corentin&nbsp;Trempont",
-      "job": "Chef&nbsp;de Projet&nbsp;Digital",
-      "phone": "+32&nbsp;(0)&nbsp;491&nbsp;40&nbsp;17&nbsp;19",
-      "email": "cro.trempont@gmail.com",
-      "linkedin": "linkedin.com/in/corentin-trempont"
-    },
+    "toggle": "en",
     "about": {
       "title": "À&nbsp;propos",
       "description": "Diplômé de l’UCLouvain et passionné par le design, je me suis vite tourné vers le monde du marketing digital, poussé par mon goût prononcé pour l’innovation. Toujours prêt à relever de nouveaux défis et aimant rencontrer de nouvelles personnes, je serais heureux d’en savoir plus sur vous et vos objectifs. <span class=\"second_color italic\">#NHésitezPasÀMeContacter!</span>"
@@ -145,8 +133,8 @@
           "title": "Stage&nbsp;en&nbsp;<span class=\"second_color_border\">Growth&nbsp;Hacking</span>",
           "company": "PP&nbsp;Company",
           "location": "Hainaut",
-          "dates": "Mars&nbsp;2016&nbsp;à&nbsp;Avril&nbsp;2016",
-          "content": "<ul class=\"block_text\"><li><li>Analyse et contribution à l'amélioration de la visibilité en ligne de l'entreprise (réseaux&nbsp;sociaux & SEO&nbsp;/&nbsp;SEA)&nbsp;</li><li>Conception, insertion et tests&nbsp;A/B de publicités&nbsp;</li><li>Élaboration de nouvelles offres afin d'augmenter la rentabilité d'un jeu en ligne «&nbsp;free-to-play&nbsp;».</li></ul>"
+          "dates": "Mars&nbsp;2016&nbsp;à&nbsp;avril&nbsp;2016",
+          "content": "<ul class=\"block_text\"><li>Analyse et contribution à l'amélioration de la visibilité en ligne de l'entreprise (réseaux&nbsp;sociaux & SEO&nbsp;/&nbsp;SEA)&nbsp;</li><li>Conception, insertion et tests&nbsp;A/B de publicités&nbsp;</li><li>Élaboration de nouvelles offres afin d'augmenter la rentabilité d'un jeu en ligne «&nbsp;free-to-play&nbsp;».</li></ul>"
         }
       ]
     },
@@ -157,14 +145,14 @@
           "title": "Master&nbsp;en <span class=\"second_color_border\">Ingéniorat&nbsp;de&nbsp;gestion</span>",
           "company": "UCLouvain&nbsp;<span class=\"second_color\">\\</span>&nbsp;LSM",
           "location": "Hainaut",
-          "dates": "Septembre&nbsp;2013&nbsp;à&nbsp;Août&nbsp;2018",
+          "dates": "Septembre&nbsp;2013&nbsp;à&nbsp;août&nbsp;2018",
           "content": "<p class=\"block_text\">Connaissance&nbsp;transversale du&nbsp;management et de&nbsp;l'économie.</p><p class=\"block_text\"><span class=\"second_color\">></span>&nbsp;Spécialisations&nbsp;: Business&nbsp;Analytics <span class=\"second_color\">∙</span> Digital&nbsp;Marketing</p>"
         },
         {
           "title": "C<span class=\"second_color\">.</span>E<span class=\"second_color\">.</span>S<span class=\"second_color\">.</span>S&nbsp;en Sciences&nbsp;<span class=\"second_color\">/</span>&nbsp;Math",
           "company": "Institut&nbsp;Saint&nbsp;Joseph",
           "location": "Hainaut",
-          "dates": "Septembre&nbsp;2007&nbsp;à&nbsp;Août&nbsp;2013",
+          "dates": "Septembre&nbsp;2007&nbsp;à&nbsp;août&nbsp;2013",
           "content": "<p class=\"block_text\">Immersion&nbsp;linguistique avec certains cours donnés en néerlandais.</p>"
         }
       ]
