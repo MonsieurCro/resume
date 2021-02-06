@@ -57,7 +57,7 @@
       text-decoration: none;
       color: inherit;
     }
-    h1, h4, h3, h4, h5, h6 {
+    h1, h2, h3, h4, h5, h6, p {
       margin: 0;
     }
     hr {
@@ -65,13 +65,13 @@
       border: none; border-bottom: .05em solid black;
       margin: .75em auto calc(.75em + .05em);
     }
-    .bold, h1, h4, h3 {
+    .bold, h1, h2, h3 {
       font-weight: 700;
     }
     .thin {
       font-weight: 100;
     }
-    .upper, h4, h3, h4 {
+    .upper, h2, h3 {
       text-transform: uppercase;
     }
     .italic {
@@ -87,7 +87,7 @@
       text-align: justify;
       text-justify: inter-word;
     }
-    .first_color, h1, h4 {
+    .first_color, h1, h2 {
       color: #225794;
     }
     .second_color, *:hover > i {
@@ -104,23 +104,23 @@
     .section:nth-of-type(2n+1) {
       background-color: #F2F2F2;
     }
+    .section.active {
+      height: 100%;
+    }
     .section .header, .section .content {
       width: 100%;
-      padding: .75em 1.5em;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
     }
     .section .header {
-      height: 20vh; min-height: 3em;
-      transition: all 1s ease;
+      height: 20vh;
       cursor: pointer;
       position: relative;
     }
     .section.active .header {
-      height: 10vh;
-      margin-top: .75em;
+      height: 20%;
     }
     .section .header .background {
       position: absolute;
@@ -134,17 +134,28 @@
     }
     .section .header .background::before {
       content: '';
+      width: 100%; height: 100%;
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(0, 0, 0, .7);
+      opacity: 0;
+      transition: all .3s ease;
+    }
+    .section .header:hover .background::before, .section.active .header .background::before {
+      opacity: 1;
+    }
+    .section .header:hover .background, .section.active .header .background {
+      filter: grayscale(1);
+    }
+    .section .header .background::after {
+      content: '';
       width: 100%; height: 20%;
       position: absolute;
       top: 0; left: 0; right: 0; bottom: auto;
       background-image: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.05) 35%, rgba(0, 0, 0, .35) 100%);
     }
-    .section .header:hover .background, .section.active .header .background {
-      filter: grayscale(1) brightness(.35);
-    }
     .section .header .title {
       color: white;
-      text-align: center;
       position: relative;
       z-index: 3;
       -webkit-transform: scale(0);
@@ -157,6 +168,14 @@
       -ms-transform: scale(1);
       transform: scale(1);
     }
+    .section .header .nav {
+      padding: 0 .5em;
+      opacity: 0;
+      transition: all .3s ease;
+    }
+    .section.active .header .nav {
+      opacity: 1;
+    }
     .section .header .date {
       position: absolute;
       left: 5vw; top: 50%; bottom: auto; right: auto;
@@ -164,17 +183,14 @@
       z-index: 2;
       color: white;
       font-size: 1.5em; font-weight: bold;
-      transition: all .3s ease;
-    }
-    .section .header:hover .date, .section.active .header .date {
-      opacity: 0;
     }
     .section .content {
       /*min-height: calc(100vh - 100px);*/
-      display: none;
+      height: 0; opacity: 0;
+      transition: all 2s ease;
     }
     .section.active .content {
-      display: block;
+      height: auto; opacity: 1;
     }
     .container {
       width: 95%; max-width: 900px; height: auto;
@@ -218,6 +234,7 @@
     }
     .img_box {
       position: relative;
+      margin: 1em auto;
     }
     .img_box::before, .img_box::after {
       content: '';
@@ -277,17 +294,21 @@
       .block_inline {
         display: block;
       }
-    }
+      .date {
+        display: none;
+        }
+      }
   </style>
 </head>
 <body>
   <!-- Works -->
   <div id="work5" class="section">
     <div class="header">
-      <div class="background" style="background-image:url(./assets/UAntwerpen-CoronaCombat.png);background-color:#000000;"></div>
-      <h4 class="title">Corona&nbsp;Combat <i class="fas fa-paperclip second_color"></i>&nbsp;UAntwerpen</h4>
+      <div class="background" style="background-image:url(./assets/UAntwerpen-CoronaCombat.png);background-color:#337AC5;"></div><!-- #000000 -->
+      <h2 class="title"><span class="nav prev"><i class="fas fa-chevron-left"></i></span>&nbsp;Corona&nbsp;Combat <i class="fas fa-paperclip second_color"></i>&nbsp;UAntwerpen&nbsp;<span class="nav next"><i class="fas fa-chevron-right"></i></span></h2>
       <span class="date">FEB21</span>
     </div>
+
     <div class="content">
       <div class="container">
         <p>Compétition organisée pour les étudiants de l'Université d'Anvers avec comme slogan "Tous ensemble contre le coronavirus".</p>
@@ -301,7 +322,7 @@
   <div id="work4" class="section">
     <div class="header">
       <div class="background" style="background-image:url(./assets/MediaMarkt-KerstBubbel.png);background-color:#970506;"></div>
-      <h4 class="title">KerstBubbel <i class="fas fa-paperclip second_color"></i>&nbsp;MediaMarkt</h4>
+      <h2 class="title"><span class="nav prev"><i class="fas fa-chevron-left"></i></span>&nbsp;KerstBubbel <i class="fas fa-paperclip second_color"></i>&nbsp;MediaMarkt&nbsp;<span class="nav next"><i class="fas fa-chevron-right"></i></span></h2>
       <span class="date">DEC20</span>
     </div>
     <div class="content">
@@ -318,7 +339,7 @@
   <div id="work3" class="section">
     <div class="header">
       <div class="background" style="background-image:url(./assets/Fraport-ChristmasGiftFinder.png);background-color:#AC9C8F;"></div>
-      <h4 class="title">Christmas Gift&nbsp;Finder <i class="fas fa-paperclip second_color"></i>&nbsp;Fraport</h4>
+      <h2 class="title"><span class="nav prev"><i class="fas fa-chevron-left"></i></span>&nbsp;Christmas Gift&nbsp;Finder <i class="fas fa-paperclip second_color"></i>&nbsp;Fraport&nbsp;<span class="nav next"><i class="fas fa-chevron-right"></i></span></h2>
       <span class="date">NOV20</span>
     </div>
     <div class="content">
@@ -335,7 +356,7 @@
   <div id="work2" class="section">
     <div class="header">
       <div class="background" style="background-image:url(./assets/MediaMarkt-ZwarteMarkt.png);background-color:#BF1110;"></div>
-      <h4 class="title">Zwarte&nbsp;Markt <i class="fas fa-paperclip second_color"></i>&nbsp;MediaMarkt</h4>
+      <h2 class="title"><span class="nav prev"><i class="fas fa-chevron-left"></i></span>&nbsp;Zwarte&nbsp;Markt <i class="fas fa-paperclip second_color"></i>&nbsp;MediaMarkt&nbsp;<span class="nav next"><i class="fas fa-chevron-right"></i></span></h2>
       <span class="date">NOV20</span>
     </div>
     <div class="content">
@@ -351,8 +372,8 @@
   </div>
   <div id="work1" class="section">
     <div class="header">
-      <div class="background" style="background-image:url(./assets/Carrefour-S1nglesDayMatch.png);background-color:#1C1C1C;"></div>
-      <h4 class="title">S1ngles&nbsp;Day&nbsp;Match <i class="fas fa-paperclip second_color"></i>&nbsp;Carrefour</h4>
+      <div class="background" style="background-image:url(./assets/Carrefour-S1nglesDayMatch.png);background-color:#0E3368;"></div><!-- #1C1C1C -->
+      <h2 class="title"><span class="nav prev"><i class="fas fa-chevron-left"></i></span>&nbsp;S1ngles&nbsp;Day&nbsp;Match <i class="fas fa-paperclip second_color"></i>&nbsp;Carrefour&nbsp;<span class="nav next"><i class="fas fa-chevron-right"></i></span></h2>
       <span class="date">NOV20</span>
     </div>
     <div class="content">
@@ -379,10 +400,21 @@
   <script>
     $(document).ready(function(){
       $('.section .header').click(function(){
-        if(!$(this).parent().hasClass('current')){
-          $('html, body').animate({ scrollTop: $(this).offset().top }, 1000);
+        var work = $(this).parent();
+        console.log(work.index());
+
+        if(!$(work).hasClass('active')){
+          $('html, body').delay(500).animate({ scrollTop: $(work).offset().top }, 1);
         };
-        $(this).parent().toggleClass('active');
+        $(work).toggleClass('active');
+      });
+
+      $('.section .header i').click(function(){
+        if($(this).hasClass('prev')){
+          console.log('prev');
+        } else if($(this).hasClass('next')){
+          console.log('next');
+        };
       });
     });
   </script>
