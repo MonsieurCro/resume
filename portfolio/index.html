@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+
+  <meta name="theme-color" content="#225794"/>
+  <meta name="msapplication-TileColor" content="#225794"/>
+  <meta name="msapplication-navbutton-color" content="#225794"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="#225794"/>
+
+  <title>Corentin Trempont | Portfolio</title>
+  <meta name="author" content="Corentin Trempont"/>
+  <link rel="shortcut icon" type="image/png" href="../assets/favicon.png"/>
+  <!-- <link rel="manifest" href="../site.webmanifest"/> -->
+
+  <link rel="preconnect" href="https://fonts.gstatic.com"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous"/>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+  <style>
+    * {
+      outline: none;
+      outline-color: transparent;
+      -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+      -webkit-touch-callout: none;
+      -webkit-user-drag: none;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      color: #424242;
+      line-height: 1.25em;
+    }
+    *:not(input):not(select) {
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      -o-user-select: none;
+      user-select: none;
+    }
+    html, body {
+      margin: 0; padding: 0;
+      width: 100%; height: 100%;
+      background-color: white;
+      -ms-overflow-style: none;
+      scroll-behavior: smooth;
+    }
+    html::-webkit-scrollbar, body::-webkit-scrollbar {
+      width: 0; height: 0;
+      display: none;
+    }
+    a, .fa, .fab, .fad, .fal, .far, .fas {
+      text-decoration: none;
+      color: inherit;
+    }
+    h1, h4, h3, h4, h5, h6 {
+      margin: 0;
+    }
+    hr {
+      width: 2.5em; height: 0;
+      border: none; border-bottom: .05em solid black;
+      margin: .75em auto calc(.75em + .05em);
+    }
+    .bold, h1, h4, h3 {
+      font-weight: 700;
+    }
+    .thin {
+      font-weight: 100;
+    }
+    .upper, h4, h3, h4 {
+      text-transform: uppercase;
+    }
+    .italic {
+      font-style: italic;
+    }
+    .bigger {
+      font-size: 110%;
+    }
+    .smaller {
+      font-size: 90%;
+    }
+    .justified {
+      text-align: justify;
+      text-justify: inter-word;
+    }
+    .first_color, h1, h4 {
+      color: #225794;
+    }
+    .second_color, *:hover > i {
+      color: #E39825;
+      transition: all .3s ease;
+    }
+    /* Layout */
+    .section {
+      width: 100%; height: auto;
+      background-color: #FAFAFA;
+      overflow: hidden;
+      text-align: center;
+    }
+    .section:nth-of-type(2n+1) {
+      background-color: #F2F2F2;
+    }
+    .section .header, .section .content {
+      width: 100%;
+      padding: .75em 1.5em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .section .header {
+      height: 20vh; min-height: 3em;
+      transition: all 1s ease;
+      cursor: pointer;
+      position: relative;
+    }
+    .section.active .header {
+      height: 10vh;
+      margin-top: .75em;
+    }
+    .section .header .background {
+      position: absolute;
+      width: 100%; height: 100%;
+      top: 0; left: 0; bottom: 0; right: 0;
+      z-index: 1;
+      transition: all .3s ease;
+      background-size: auto 75%;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .section .header .background::before {
+      content: '';
+      width: 100%; height: 20%;
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: auto;
+      background-image: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.05) 35%, rgba(0, 0, 0, .35) 100%);
+    }
+    .section .header:hover .background, .section.active .header .background {
+      filter: grayscale(1) brightness(.35);
+    }
+    .section .header .title {
+      color: white;
+      text-align: center;
+      position: relative;
+      z-index: 3;
+      -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+      transform: scale(0);
+      transition: all .45s ease;
+    }
+    .section .header:hover .title, .section.active .header .title {
+      -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+      transform: scale(1);
+    }
+    .section .header .date {
+      position: absolute;
+      left: 5vw; top: 50%; bottom: auto; right: auto;
+      transform: translateY(-50%);
+      z-index: 2;
+      color: white;
+      font-size: 1.5em; font-weight: bold;
+      transition: all .3s ease;
+    }
+    .section .header:hover .date, .section.active .header .date {
+      opacity: 0;
+    }
+    .section .content {
+      /*min-height: calc(100vh - 100px);*/
+      display: none;
+    }
+    .section.active .content {
+      display: block;
+    }
+    .container {
+      width: 95%; max-width: 900px; height: auto;
+      margin: auto; padding: .5em .25em;
+      text-align: center;
+    }
+    /* Content */
+    #contact a {
+      padding: 0 .25em;
+    }
+    .section_title {
+      font-size: 115%;
+      padding-top: 1em;
+    }
+    .section_block {
+      padding: 1em 1.25em; margin: 1.25em 0;
+      border: .125em solid transparent;
+      transition: all .3s ease;
+    }
+    .section_block:hover {
+      border-color: #225794;
+    }
+    .block_inline {
+      display: inline-block;
+    }
+    .block_title {
+      font-size: 105%;
+    }
+    .block_info {
+      font-size: 85%;
+      padding-top: .75em;
+    }
+    .block_text {
+      font-size: 95%;
+    }
+    .block_text:not(.justified) {
+      padding-top: .67em;
+    }
+    .block_button {
+      border-color: #E39825;
+    }
+    .img_box {
+      position: relative;
+    }
+    .img_box::before, .img_box::after {
+      content: '';
+      position: absolute;
+      top: .5em; left: .5em; bottom: .5em; right: .5em;
+      z-index: 3;
+    }
+    .img_box::before {
+      border-top: .05em solid #E39825;
+      border-bottom: .05em solid #E39825;
+      -webkit-transform: scaleX(0);
+      -ms-transform: scaleX(0);
+      transform: scaleX(0);
+      transition: all .3s ease;
+    }
+    .img_box::after {
+      border-left: .05em solid #E39825;
+      border-right: .05em solid #E39825;
+      -webkit-transform: scaleY(0);
+      -ms-transform: scaleY(0);
+      transform: scaleY(0);
+      transition: all .5s ease;
+    }
+    .img_box:hover::before {
+      -webkit-transform: scaleX(1);
+      -ms-transform: scaleX(1);
+      transform: scaleX(1);
+    }
+    .img_box:hover::after {
+      -webkit-transform: scaleY(1);
+      -ms-transform: scaleY(1);
+      transform: scaleY(1);
+    }
+    .img_box img {
+      display: block;
+      width: auto; height: auto;
+      max-width: 100%; max-height: 100%;
+    }
+    /* Queries */
+    @media screen and (min-width: 1920px){
+      body {
+        font-size: 18px;
+      }
+      #container {
+        max-width: 1200px;
+      }
+    }
+    @media screen and (max-width: 600px){
+      body {
+        font-size: 3.25vw;
+      }
+    }
+    @media screen and (max-width: 450px){
+      body {
+        font-size: 4vw;
+      }
+      .block_inline {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Works -->
+  <div id="work5" class="section">
+    <div class="header">
+      <div class="background" style="background-image:url(./assets/UAntwerpen-CoronaCombat.png);background-color:#000000;"></div>
+      <h4 class="title">Corona&nbsp;Combat <i class="fas fa-paperclip second_color"></i>&nbsp;UAntwerpen</h4>
+      <span class="date">FEB21</span>
+    </div>
+    <div class="content">
+      <div class="container">
+        <p>Compétition organisée pour les étudiants de l'Université d'Anvers avec comme slogan "Tous ensemble contre le coronavirus".</p>
+        <div class="img_box">
+          <img src="./assets/UAntwerpen-CoronaCombat.jpg" title="" alt=""/>
+        </div>
+        <p><span><i class="fas fa-bullhorn fa-fw"></i>&nbsp;Corona&nbsp;Combat</span> <span><i class="far fa-building fa-fw"></i>&nbsp;<a href="https://www.uantwerpen.be/en/" target="_blank">UAntwerpen</a></span> <span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;Février&nbsp;2021</span></p>
+      </div>
+    </div>
+  </div>
+  <div id="work4" class="section">
+    <div class="header">
+      <div class="background" style="background-image:url(./assets/MediaMarkt-KerstBubbel.png);background-color:#970506;"></div>
+      <h4 class="title">KerstBubbel <i class="fas fa-paperclip second_color"></i>&nbsp;MediaMarkt</h4>
+      <span class="date">DEC20</span>
+    </div>
+    <div class="content">
+      <div class="container">
+        <p>Action réalisée pour MediaMarkt Belgium sur le thème de la "bulle sociale" à l'occasion des fêtes de fin d'année (décembre 2020).</p>
+        <hr />
+        <div class="img_box">
+          <img src="./assets/MediaMarkt-KerstBubbel.jpg" title="" alt=""/>
+        </div>
+        <p><span><i class="fas fa-bullhorn fa-fw"></i>&nbsp;KerstBubbel</span> <span><i class="far fa-building fa-fw"></i>&nbsp;<a href="https://www.mediamarkt.be/nl/" target="_blank">MediaMarkt&nbsp;Belgium</a></span> <span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;Décembre&nbsp;2020</span></p>
+      </div>
+    </div>
+  </div>
+  <div id="work3" class="section">
+    <div class="header">
+      <div class="background" style="background-image:url(./assets/Fraport-ChristmasGiftFinder.png);background-color:#AC9C8F;"></div>
+      <h4 class="title">Christmas Gift&nbsp;Finder <i class="fas fa-paperclip second_color"></i>&nbsp;Fraport</h4>
+      <span class="date">NOV20</span>
+    </div>
+    <div class="content">
+      <div class="container">
+        <p>Création d'un persona du visiteur de l'e-shop de l'Aéroport de Francfort et suggestion de produits à l'occasion des fêtes de fin d'année 2020.</p>
+        <hr />
+        <div class="img_box">
+          <img src="./assets/Fraport-ChristmasGiftFinder.jpg" title="" alt=""/>
+        </div>
+        <p><span><i class="fas fa-bullhorn fa-fw"></i>&nbsp;Christmas Gift&nbsp;Finder</span> <span><i class="far fa-building fa-fw"></i>&nbsp;<a href="https://www.frankfurt-airport.com/en.html" target="_blank">Frankfurt&nbsp;Airport</a></span> <span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;Novembre&nbsp;2020</span></p>
+      </div>
+    </div>
+  </div>
+  <div id="work2" class="section">
+    <div class="header">
+      <div class="background" style="background-image:url(./assets/MediaMarkt-ZwarteMarkt.png);background-color:#BF1110;"></div>
+      <h4 class="title">Zwarte&nbsp;Markt <i class="fas fa-paperclip second_color"></i>&nbsp;MediaMarkt</h4>
+      <span class="date">NOV20</span>
+    </div>
+    <div class="content">
+      <div class="container">
+        <p>Campagne inspirée des enchères inversées AliExpress réalisée pour MediaMarkt Belgium en amont du Black Friday (mi-novembre 2020).</p>
+        <hr />
+        <div class="img_box">
+          <img src="./assets/MediaMarkt-ZwarteMarkt.jpg" title="" alt=""/>
+        </div>
+        <p><span><i class="fas fa-bullhorn fa-fw"></i>&nbsp;Zwarte&nbsp;Markt</span> <span><i class="far fa-building fa-fw"></i>&nbsp;<a href="https://www.mediamarkt.be/nl/" target="_blank">MediaMarkt&nbsp;Belgium</a></span> <span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;Novembre&nbsp;2020</span></p>
+      </div>
+    </div>
+  </div>
+  <div id="work1" class="section">
+    <div class="header">
+      <div class="background" style="background-image:url(./assets/Carrefour-S1nglesDayMatch.png);background-color:#1C1C1C;"></div>
+      <h4 class="title">S1ngles&nbsp;Day&nbsp;Match <i class="fas fa-paperclip second_color"></i>&nbsp;Carrefour</h4>
+      <span class="date">NOV20</span>
+    </div>
+    <div class="content">
+      <div class="container">
+        <p>Campagne basée sur une mécanique de type "Tinder" à l'occasion de la journée des Célibataires (11/11/2020) pour Carrefour France.</p>
+        <hr />
+        <div class="img_box">
+          <img src="./assets/Carrefour-S1nglesDayMatch.jpg" title="" alt=""/>
+        </div>
+        <p><span><i class="fas fa-bullhorn fa-fw"></i>&nbsp;S1ngles&nbsp;Day&nbsp;Match</span> <span><i class="far fa-building fa-fw"></i>&nbsp;<a href="https://www.carrefour.fr/" target="_blank">Carrefour&nbsp;France</a></span> <span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;Novembre&nbsp;2020</span></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <div id="contact" class="section">
+    <div class="container">
+      <a href="tel:+32491401719" target="_top"><span class="smaller block"><i class="fas fa-phone-alt fa-fw"></i>&nbsp;+32&nbsp;(0)&nbsp;491&nbsp;40&nbsp;17&nbsp;19</span></a>
+      <a href="mailto:cro.trempont@gmail.com" target="_top"><span class="smaller block"><i class="fas fa-envelope fa-fw"></i>&nbsp;cro.trempont@gmail.com</span></a>
+      <a href="https://www.linkedin.com/in/corentin-trempont/" target="_blank"><span class="smaller block"><i class="fab fa-linkedin fa-fw"></i>&nbsp;linkedin.com/in/corentin-trempont</span></a>
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function(){
+      $('.section .header').click(function(){
+        if(!$(this).parent().hasClass('current')){
+          $('html, body').animate({ scrollTop: $(this).offset().top }, 1000);
+        };
+        $(this).parent().toggleClass('active');
+      });
+    });
+  </script>
+</body>
+</html>
