@@ -87,7 +87,7 @@
       text-align: justify;
       text-justify: inter-word;
     }
-    .first_color, h1, h2 {
+    .first_color, h1, h2, h3 {
       color: #225794;
     }
     .second_color, *:hover > i {
@@ -100,52 +100,56 @@
       background-color: #FAFAFA;
       overflow: hidden;
       text-align: center;
+      transition: all .3s ease;
     }
     .section:nth-of-type(2n+1) {
       background-color: #F2F2F2;
     }
+    .section:first-of-type {
+      display: none;
+    }
     .section.active {
       height: 100%;
+      display: block;
     }
-    .section .header, .section .content {
-      width: 100%;
+    .section.active.fixed {
+      position: fixed;
+      top: 0; left: 0; bottom: 0; right: 0;
+      z-index: 9999;
+    }
+    .section .header {
+      height: 20vh; width: 100%;
+      cursor: pointer;
+      position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
     }
-    .section .header {
-      height: 20vh;
-      cursor: pointer;
-      position: relative;
-    }
-    .section.active .header {
-      height: 20%;
+    .section .header:hover * {
+      transition: all .75s ease;
     }
     .section .header .background {
       position: absolute;
       width: 100%; height: 100%;
       top: 0; left: 0; bottom: 0; right: 0;
       z-index: 1;
-      transition: all .3s ease;
       background-size: auto 75%;
       background-repeat: no-repeat;
       background-position: center;
+      background-color: #225794;
+    }
+    .section .header:hover .background, .section.active .header .background {
+      filter: grayscale(1);
     }
     .section .header .background::before {
       content: '';
       width: 100%; height: 100%;
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background-color: rgba(0, 0, 0, .7);
-      opacity: 0;
-      transition: all .3s ease;
     }
     .section .header:hover .background::before, .section.active .header .background::before {
-      opacity: 1;
-    }
-    .section .header:hover .background, .section.active .header .background {
-      filter: grayscale(1);
+      background-color: rgba(0, 0, 0, .7);
     }
     .section .header .background::after {
       content: '';
@@ -161,7 +165,7 @@
       -webkit-transform: scale(0);
       -ms-transform: scale(0);
       transform: scale(0);
-      transition: all .45s ease;
+      transition: all .5s ease;
     }
     .section .header:hover .title, .section.active .header .title {
       -webkit-transform: scale(1);
@@ -171,7 +175,7 @@
     .section .header .nav {
       padding: 0 .5em;
       opacity: 0;
-      transition: all .3s ease;
+      transition: all .45s ease;
     }
     .section.active .header .nav {
       opacity: 1;
@@ -185,62 +189,31 @@
       font-size: 1.5em; font-weight: bold;
     }
     .section .content {
-      /*min-height: calc(100vh - 100px);*/
-      height: 0; opacity: 0;
-      transition: all 2s ease;
+      width: 100%; height: 0;
     }
     .section.active .content {
-      height: auto; opacity: 1;
+      height: calc(100% - 20vh);
     }
     .container {
-      width: 95%; max-width: 900px; height: auto;
-      margin: auto; padding: .5em .25em;
+      width: 95%; max-width: 900px; height: 100%;
+      margin: auto; padding: 1.5em .5em;
       text-align: center;
+      overflow-y: auto;
+    }
+    .container::-webkit-scrollbar {
+      width: 0; height: 0;
+      display: none;
     }
     /* Content */
-    #contact a {
-      padding: 0 .25em;
-    }
-    .section_title {
-      font-size: 115%;
-      padding-top: 1em;
-    }
-    .section_block {
-      padding: 1em 1.25em; margin: 1.25em 0;
-      border: .125em solid transparent;
-      transition: all .3s ease;
-    }
-    .section_block:hover {
-      border-color: #225794;
-    }
-    .block_inline {
-      display: inline-block;
-    }
-    .block_title {
-      font-size: 105%;
-    }
-    .block_info {
-      font-size: 85%;
-      padding-top: .75em;
-    }
-    .block_text {
-      font-size: 95%;
-    }
-    .block_text:not(.justified) {
-      padding-top: .67em;
-    }
-    .block_button {
-      border-color: #E39825;
-    }
     .img_box {
       position: relative;
       margin: 1em auto;
+      width: fit-content;
     }
     .img_box::before, .img_box::after {
       content: '';
       position: absolute;
       top: .5em; left: .5em; bottom: .5em; right: .5em;
-      z-index: 3;
     }
     .img_box::before {
       border-top: .05em solid #E39825;
@@ -269,7 +242,7 @@
       transform: scaleY(1);
     }
     .img_box img {
-      display: block;
+      display: block; margin: auto;
       width: auto; height: auto;
       max-width: 100%; max-height: 100%;
     }
@@ -282,6 +255,11 @@
         max-width: 1200px;
       }
     }
+    @media screen and (max-width: 900px){
+      .date {
+        display: none;
+      }
+    }
     @media screen and (max-width: 600px){
       body {
         font-size: 3.25vw;
@@ -291,16 +269,31 @@
       body {
         font-size: 4vw;
       }
-      .block_inline {
-        display: block;
-      }
-      .date {
-        display: none;
-        }
-      }
+    }
   </style>
 </head>
 <body>
+  <!-- Contact -->
+  <div id="next" class="section">
+    <div class="header">
+      <div class="background" style="background-color:#E39825;"></div>
+      <h2 class="title"><span class="nav prev"><i class="fas fa-chevron-left"></i></span>&nbsp;An&nbsp;amazing&nbsp;project <i class="fas fa-paperclip second_color"></i>&nbsp;Your&nbsp;company&nbsp;<span class="nav next"><i class="fas fa-chevron-right"></i></span></h2>
+      <span class="date">NEXT</span>
+    </div>
+    <div class="content">
+      <div class="container">
+        <h3>…or at least an interview?</h3>
+        <hr />
+        <div class="img_box">
+          <img src="https://purrfectlove.net/wp-content/uploads/2018/01/Cat-Please.gif" title="" alt="[please insert very cute cat here]"/>
+        </div>
+        <a href="tel:+32491401719" target="_top"><p class="smaller"><i class="fas fa-phone-alt fa-fw"></i>&nbsp;+32&nbsp;(0)&nbsp;491&nbsp;40&nbsp;17&nbsp;19</p></a>
+        <a href="mailto:cro.trempont@gmail.com" target="_top"><p class="smaller"><i class="fas fa-envelope fa-fw"></i>&nbsp;cro.trempont@gmail.com</p></a>
+        <a href="https://www.linkedin.com/in/corentin-trempont/" target="_blank"><p class="smaller"><i class="fab fa-linkedin fa-fw"></i>&nbsp;linkedin.com/in/corentin-trempont</p></a>
+      </div>
+    </div>
+  </div>
+
   <!-- Works -->
   <div id="work5" class="section">
     <div class="header">
@@ -312,6 +305,7 @@
     <div class="content">
       <div class="container">
         <p>Compétition organisée pour les étudiants de l'Université d'Anvers avec comme slogan "Tous ensemble contre le coronavirus".</p>
+        <hr />
         <div class="img_box">
           <img src="./assets/UAntwerpen-CoronaCombat.jpg" title="" alt=""/>
         </div>
@@ -388,32 +382,52 @@
     </div>
   </div>
 
-  <!-- Contact -->
-  <div id="contact" class="section">
-    <div class="container">
-      <a href="tel:+32491401719" target="_top"><span class="smaller block"><i class="fas fa-phone-alt fa-fw"></i>&nbsp;+32&nbsp;(0)&nbsp;491&nbsp;40&nbsp;17&nbsp;19</span></a>
-      <a href="mailto:cro.trempont@gmail.com" target="_top"><span class="smaller block"><i class="fas fa-envelope fa-fw"></i>&nbsp;cro.trempont@gmail.com</span></a>
-      <a href="https://www.linkedin.com/in/corentin-trempont/" target="_blank"><span class="smaller block"><i class="fab fa-linkedin fa-fw"></i>&nbsp;linkedin.com/in/corentin-trempont</span></a>
-    </div>
-  </div>
-
   <script>
     $(document).ready(function(){
-      $('.section .header').click(function(){
-        var work = $(this).parent();
-        console.log(work.index());
+      $('.section .header *').click(function(e){
+        var work = $(this).parents('.section');
+        var index = $(work).index();
 
+        // isNotActive
         if(!$(work).hasClass('active')){
-          $('html, body').delay(500).animate({ scrollTop: $(work).offset().top }, 1);
-        };
-        $(work).toggleClass('active');
-      });
+          switchWork(index);
+        }
+        // isNavButton
+        else if($(this).parent().hasClass('nav')){
+          //e.preventDefault();
+          e.stopPropagation();
+          var nav = $(this).parent();
+          var length = $('.section').length -1;
 
-      $('.section .header i').click(function(){
-        if($(this).hasClass('prev')){
-          console.log('prev');
-        } else if($(this).hasClass('next')){
-          console.log('next');
+          if($(nav).hasClass('prev')){
+            var prev = index > 0 ? index - 1 : length;
+            switchWork(prev);
+          }
+          else if($(nav).hasClass('next')){
+            var next = length > index ? index + 1 : 0;
+            switchWork(next);
+          };
+        }
+        // default-isActive
+        else {
+          $(work).toggleClass('active');
+        };
+
+        $(document).keydown(function(e){
+          if($('.active').length > 0){
+            if(e.which == 37){ //left
+              console.log('left');
+            };
+            if(e.which == 39){ //right
+              console.log('right');
+            };
+          };
+        });
+
+        function switchWork(index){
+          $('.active').removeClass('active fixed');
+          $($('.section').eq(index)).addClass('active')/*;
+          $('html, body').delay(500).animate({ scrollTop: $('.active').offset().top }, 1)*/.addClass('fixed');
         };
       });
     });
