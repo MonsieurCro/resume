@@ -534,7 +534,7 @@
         lang = $.inArray(getURLParameter('lang'), langs) > -1 ? getURLParameter('lang') : 'en';
         copyTranslation(strings, lang);
 
-        $('#toggle').click(function(){
+        $('#toggle span').click(function(){
           lang = $.inArray($(this).text(), langs) > -1 ? $(this).text() : 'en';
           copyTranslation(strings, lang);
         });

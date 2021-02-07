@@ -274,7 +274,7 @@
 </head>
 <body>
   <!-- Contact -->
-  <div id="next" class="section">
+  <div class="section">
     <div class="header">
       <div class="background" style="background-color:#E39825;"></div>
       <h2 class="title"><span class="nav prev"><i class="fas fa-chevron-left"></i></span>&nbsp;An&nbsp;amazing&nbsp;project <i class="fas fa-paperclip second_color"></i>&nbsp;Your&nbsp;company&nbsp;<span class="nav next"><i class="fas fa-chevron-right"></i></span></h2>
@@ -295,13 +295,12 @@
   </div>
 
   <!-- Works -->
-  <div id="work5" class="section">
+  <div class="section">
     <div class="header">
       <div class="background" style="background-image:url(./assets/UAntwerpen-CoronaCombat.png);background-color:#337AC5;"></div><!-- #000000 -->
       <h2 class="title"><span class="nav prev"><i class="fas fa-chevron-left"></i></span>&nbsp;Corona&nbsp;Combat <i class="fas fa-paperclip second_color"></i>&nbsp;UAntwerpen&nbsp;<span class="nav next"><i class="fas fa-chevron-right"></i></span></h2>
       <span class="date">FEB21</span>
     </div>
-
     <div class="content">
       <div class="container">
         <p>Compétition organisée pour les étudiants de l'Université d'Anvers avec comme slogan "Tous ensemble contre le coronavirus".</p>
@@ -313,7 +312,8 @@
       </div>
     </div>
   </div>
-  <div id="work4" class="section">
+
+  <div class="section">
     <div class="header">
       <div class="background" style="background-image:url(./assets/MediaMarkt-KerstBubbel.png);background-color:#970506;"></div>
       <h2 class="title"><span class="nav prev"><i class="fas fa-chevron-left"></i></span>&nbsp;KerstBubbel <i class="fas fa-paperclip second_color"></i>&nbsp;MediaMarkt&nbsp;<span class="nav next"><i class="fas fa-chevron-right"></i></span></h2>
@@ -330,7 +330,8 @@
       </div>
     </div>
   </div>
-  <div id="work3" class="section">
+
+  <div class="section">
     <div class="header">
       <div class="background" style="background-image:url(./assets/Fraport-ChristmasGiftFinder.png);background-color:#AC9C8F;"></div>
       <h2 class="title"><span class="nav prev"><i class="fas fa-chevron-left"></i></span>&nbsp;Christmas Gift&nbsp;Finder <i class="fas fa-paperclip second_color"></i>&nbsp;Fraport&nbsp;<span class="nav next"><i class="fas fa-chevron-right"></i></span></h2>
@@ -347,7 +348,8 @@
       </div>
     </div>
   </div>
-  <div id="work2" class="section">
+
+  <div class="section">
     <div class="header">
       <div class="background" style="background-image:url(./assets/MediaMarkt-ZwarteMarkt.png);background-color:#BF1110;"></div>
       <h2 class="title"><span class="nav prev"><i class="fas fa-chevron-left"></i></span>&nbsp;Zwarte&nbsp;Markt <i class="fas fa-paperclip second_color"></i>&nbsp;MediaMarkt&nbsp;<span class="nav next"><i class="fas fa-chevron-right"></i></span></h2>
@@ -364,7 +366,8 @@
       </div>
     </div>
   </div>
-  <div id="work1" class="section">
+
+  <div class="section">
     <div class="header">
       <div class="background" style="background-image:url(./assets/Carrefour-S1nglesDayMatch.png);background-color:#0E3368;"></div><!-- #1C1C1C -->
       <h2 class="title"><span class="nav prev"><i class="fas fa-chevron-left"></i></span>&nbsp;S1ngles&nbsp;Day&nbsp;Match <i class="fas fa-paperclip second_color"></i>&nbsp;Carrefour&nbsp;<span class="nav next"><i class="fas fa-chevron-right"></i></span></h2>
@@ -384,9 +387,12 @@
 
   <script>
     $(document).ready(function(){
+      var works = $('.section').length;
+      var index = null;
+
       $('.section .header *').click(function(e){
         var work = $(this).parents('.section');
-        var index = $(work).index();
+        index = $(work).index();
 
         // isNotActive
         if(!$(work).hasClass('active')){
@@ -394,42 +400,51 @@
         }
         // isNavButton
         else if($(this).parent().hasClass('nav')){
-          //e.preventDefault();
           e.stopPropagation();
-          var nav = $(this).parent();
-          var length = $('.section').length -1;
+          var nav = $(this).parents('.nav');
 
           if($(nav).hasClass('prev')){
-            var prev = index > 0 ? index - 1 : length;
-            switchWork(prev);
+            previousWork();
           }
           else if($(nav).hasClass('next')){
-            var next = length > index ? index + 1 : 0;
-            switchWork(next);
+            nextWork();
           };
         }
-        // default-isActive
+        // default
         else {
-          $(work).toggleClass('active');
-        };
-
-        $(document).keydown(function(e){
-          if($('.active').length > 0){
-            if(e.which == 37){ //left
-              console.log('left');
-            };
-            if(e.which == 39){ //right
-              console.log('right');
-            };
-          };
-        });
-
-        function switchWork(index){
-          $('.active').removeClass('active fixed');
-          $($('.section').eq(index)).addClass('active')/*;
-          $('html, body').delay(500).animate({ scrollTop: $('.active').offset().top }, 1)*/.addClass('fixed');
+          $(work).removeClass('active');
+          index = null;
         };
       });
+
+      $(document).keydown(function(e){
+        if(index != null){
+          if(e.which == 37){ // Arrow left
+            previousWork();
+          };
+          if(e.which == 39){ // Arrow right
+            nextWork();
+          };
+        };
+      });
+
+      function switchWork(item){
+        $('.active').removeClass('active fixed');
+        $($('.section').eq(item)).addClass('active')/*;
+        $('html, body').delay(500).animate({ scrollTop: $('.active').offset().top }, 1)*/.addClass('fixed');
+
+        index = $('.active').index();
+      };
+      function previousWork(){
+        var prev = index > 0 ? index - 1 : works - 1;
+        //console.log(index + ' --> ' + prev);
+        switchWork(prev);
+      };
+      function nextWork(){
+        var next = works - 1 > index ? index + 1 : 0;
+        //console.log(index + ' --> ' + next);
+        switchWork(next);
+      };
     });
   </script>
 </body>
