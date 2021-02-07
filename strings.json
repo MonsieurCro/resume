@@ -1,6 +1,6 @@
 {
   "en": {
-    "toggle": "<span>fr</span>",
+    "toggle": "fr",
     "about": {
       "title": "About&nbsp;me",
       "description": "Graduated from UCLouvain and passionate about design, I developed a strong taste for innovation that quickly drove me to the world of digital marketing. Always ready to take up new challenges and loving to meet new people, I would gladly know more about you and your objectives. <span class=\"second_color italic\">#FeelFreeToContactMe!</span>"
@@ -114,7 +114,7 @@
     }
   },
   "fr": {
-    "toggle": "<span>en</span>",
+    "toggle": "en",
     "about": {
       "title": "À&nbsp;propos",
       "description": "Diplômé de l’UCLouvain et passionné par le design, je me suis vite tourné vers le monde du marketing digital, poussé par mon goût prononcé pour l’innovation. Toujours prêt à relever de nouveaux défis et aimant rencontrer de nouvelles personnes, je serais heureux d’en savoir plus sur vous et vos objectifs. <span class=\"second_color italic\">#NHésitezPasÀMeContacter!</span>"

@@ -87,6 +87,12 @@
       text-align: justify;
       text-justify: inter-word;
     }
+    .inline {
+      display: inline-block;
+      color: inherit;
+      font-size: inherit;
+      font-weight: inherit;
+    }
     .first_color, h1, h2, h3 {
       color: #225794;
     }
@@ -162,6 +168,7 @@
       color: white;
       position: relative;
       z-index: 3;
+      width: 100%;
       -webkit-transform: scale(0);
       -ms-transform: scale(0);
       transform: scale(0);
@@ -251,18 +258,33 @@
       body {
         font-size: 18px;
       }
-      #container {
+      .container {
         max-width: 1200px;
       }
     }
     @media screen and (max-width: 900px){
-      .date {
+      .section .header .date {
         display: none;
       }
     }
     @media screen and (max-width: 600px){
       body {
         font-size: 3.25vw;
+      }
+      .inline {
+        display: block;
+      }
+      .section .header .nav {
+        display: block;
+        position: absolute;
+        top: 50%; bottom: auto;
+        transform: translateY(-50%);
+      }
+      .section .header .nav.prev {
+        left: .5em; right: auto;
+      }
+      .section .header .nav.next {
+        right: .5em; left: auto;
       }
     }
     @media screen and (max-width: 450px){
@@ -277,7 +299,7 @@
   <div class="section">
     <div class="header">
       <div class="background" style="background-color:#E39825;"></div>
-      <h2 class="title"><span class="nav prev"><i class="fas fa-chevron-left"></i></span>&nbsp;An&nbsp;amazing&nbsp;project <i class="fas fa-paperclip second_color"></i>&nbsp;Your&nbsp;company&nbsp;<span class="nav next"><i class="fas fa-chevron-right"></i></span></h2>
+      <h2 class="title"><span class="nav prev"><i class="fas fa-chevron-left"></i></span> An&nbsp;amazing&nbsp;project <span class="inline"><i class="fas fa-paperclip second_color"></i>&nbsp;Your&nbsp;company</span> <span class="nav next"><i class="fas fa-chevron-right"></i></span></h2>
       <span class="date">NEXT</span>
     </div>
     <div class="content">
@@ -298,7 +320,7 @@
   <div class="section">
     <div class="header">
       <div class="background" style="background-image:url(./assets/UAntwerpen-CoronaCombat.png);background-color:#337AC5;"></div><!-- #000000 -->
-      <h2 class="title"><span class="nav prev"><i class="fas fa-chevron-left"></i></span>&nbsp;Corona&nbsp;Combat <i class="fas fa-paperclip second_color"></i>&nbsp;UAntwerpen&nbsp;<span class="nav next"><i class="fas fa-chevron-right"></i></span></h2>
+      <h2 class="title"><span class="nav prev"><i class="fas fa-chevron-left"></i></span> Corona&nbsp;Combat <span class="inline"><i class="fas fa-paperclip second_color"></i>&nbsp;UAntwerpen</span> <span class="nav next"><i class="fas fa-chevron-right"></i></span></h2>
       <span class="date">FEB21</span>
     </div>
     <div class="content">
@@ -316,7 +338,7 @@
   <div class="section">
     <div class="header">
       <div class="background" style="background-image:url(./assets/MediaMarkt-KerstBubbel.png);background-color:#970506;"></div>
-      <h2 class="title"><span class="nav prev"><i class="fas fa-chevron-left"></i></span>&nbsp;KerstBubbel <i class="fas fa-paperclip second_color"></i>&nbsp;MediaMarkt&nbsp;<span class="nav next"><i class="fas fa-chevron-right"></i></span></h2>
+      <h2 class="title"><span class="nav prev"><i class="fas fa-chevron-left"></i></span> KerstBubbel <span class="inline"><i class="fas fa-paperclip second_color"></i>&nbsp;MediaMarkt</span> <span class="nav next"><i class="fas fa-chevron-right"></i></span></h2>
       <span class="date">DEC20</span>
     </div>
     <div class="content">
@@ -334,7 +356,7 @@
   <div class="section">
     <div class="header">
       <div class="background" style="background-image:url(./assets/Fraport-ChristmasGiftFinder.png);background-color:#AC9C8F;"></div>
-      <h2 class="title"><span class="nav prev"><i class="fas fa-chevron-left"></i></span>&nbsp;Christmas Gift&nbsp;Finder <i class="fas fa-paperclip second_color"></i>&nbsp;Fraport&nbsp;<span class="nav next"><i class="fas fa-chevron-right"></i></span></h2>
+      <h2 class="title"><span class="nav prev"><i class="fas fa-chevron-left"></i></span> Gift&nbsp;Finder <span class="inline"><i class="fas fa-paperclip second_color"></i>&nbsp;Fraport</span> <span class="nav next"><i class="fas fa-chevron-right"></i></span></h2>
       <span class="date">NOV20</span>
     </div>
     <div class="content">
@@ -352,7 +374,7 @@
   <div class="section">
     <div class="header">
       <div class="background" style="background-image:url(./assets/MediaMarkt-ZwarteMarkt.png);background-color:#BF1110;"></div>
-      <h2 class="title"><span class="nav prev"><i class="fas fa-chevron-left"></i></span>&nbsp;Zwarte&nbsp;Markt <i class="fas fa-paperclip second_color"></i>&nbsp;MediaMarkt&nbsp;<span class="nav next"><i class="fas fa-chevron-right"></i></span></h2>
+      <h2 class="title"><span class="nav prev"><i class="fas fa-chevron-left"></i></span> Zwarte&nbsp;Markt <span class="inline"><i class="fas fa-paperclip second_color"></i>&nbsp;MediaMarkt</span> <span class="nav next"><i class="fas fa-chevron-right"></i></span></h2>
       <span class="date">NOV20</span>
     </div>
     <div class="content">
@@ -370,7 +392,7 @@
   <div class="section">
     <div class="header">
       <div class="background" style="background-image:url(./assets/Carrefour-S1nglesDayMatch.png);background-color:#0E3368;"></div><!-- #1C1C1C -->
-      <h2 class="title"><span class="nav prev"><i class="fas fa-chevron-left"></i></span>&nbsp;S1ngles&nbsp;Day&nbsp;Match <i class="fas fa-paperclip second_color"></i>&nbsp;Carrefour&nbsp;<span class="nav next"><i class="fas fa-chevron-right"></i></span></h2>
+      <h2 class="title"><span class="nav prev"><i class="fas fa-chevron-left"></i></span> S1ngles&nbsp;Day&nbsp;Match <span class="inline"><i class="fas fa-paperclip second_color"></i>&nbsp;Carrefour</span> <span class="nav next"><i class="fas fa-chevron-right"></i></span></h2>
       <span class="date">NOV20</span>
     </div>
     <div class="content">
