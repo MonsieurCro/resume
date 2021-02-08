@@ -111,6 +111,10 @@
     "portfolio": {
       "title": "Portfolio",
       "button": "My&nbsp;works"
+    },
+    "interview": {
+      "title": "Interview",
+      "button": "Say&nbsp;hello!"
     }
   },
   "fr": {
@@ -225,6 +229,10 @@
     "portfolio": {
       "title": "Portfolio",
       "button": "Mes&nbsp;réalisations"
+    },
+    "interview": {
+      "title": "Interview",
+      "button": "Faites&nbsp;coucou&nbsp;!"
     }
   }
 }
