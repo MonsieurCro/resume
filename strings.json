@@ -114,7 +114,9 @@
     },
     "interview": {
       "title": "Interview",
-      "button": "Say&nbsp;hello!"
+      "headline": "Congrats <span class=\"block_inline\">for making it this far!</span>",
+      "description": "Continue?",
+      "button": "Yes&nbsp;/&nbsp;Yes"
     }
   },
   "fr": {
@@ -232,7 +234,9 @@
     },
     "interview": {
       "title": "Interview",
-      "button": "Faites&nbsp;coucou&nbsp;!"
+      "headline": "Félicitations <span class=\"block_inline\">pour être arrivé jusqu'ici&nbsp;!</span>",
+      "description": "Continuer&nbsp;?",
+      "button": "Oui&nbsp;/&nbsp;Oui"
     }
   }
 }

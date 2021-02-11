@@ -83,6 +83,11 @@
       border: none; border-bottom: .05em solid black;
       margin: .75em auto calc(.75em + .05em);
     }
+    span {
+      color: inherit;
+      font-size: inherit;
+      font-weight: inherit;
+    }
     .bold, h1, h2, h3, h3 span {
       font-weight: 700;
     }
@@ -148,6 +153,12 @@
       background-position: center;
       z-index: 1;
       opacity: .25;
+    }
+    .section:last-of-type {
+      background-image: url(./assets/congrats.png);
+      background-size: 100% auto;
+      background-repeat: no-repeat;
+      background-position: bottom center;
     }
     .container {
       width: 95%; max-width: 720px; height: auto;
@@ -255,8 +266,21 @@
     .block_text:not(.justified) {
       padding-top: .67em;
     }
-    .block_button {
+    .block_button:not(:hover) {
       border-color: #E39825;
+      animation: pulse 3s infinite 1s;
+    }
+    /* Keyframes */
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(227, 152, 37, .75);
+      }
+      70% {
+        box-shadow: 0 0 0 .5em rgba(227, 152, 37, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(227, 152, 37, 0);
+      }
     }
     /* Queries */
     @media screen and (min-width: 1920px){
@@ -323,7 +347,7 @@
     <div class="container">
       <div id="logo">
         <img class="good" src="./assets/profile.jpg" title="" alt="CT"/>
-        <a href="https://drive.google.com/file/d/1hh8Pe0Lg_vwgOCKh4-EigJ8WhFI_r-Xb/" target="_blank" title="Get my resume as a PDF!"><span><i class="fas fa-clipboard-check"></i><br />PDF</span></a>
+        <a href="https://drive.google.com/file/d/1hh8Pe0Lg_vwgOCKh4-EigJ8WhFI_r-Xb/" target="_blank" title="I'm also available as a PDF!"><span><i class="fas fa-clipboard-check"></i><br />PDF</span></a>
       </div>
 
       <div id="infos">
@@ -507,12 +531,18 @@
   <!-- Interview -->
   <div id="interview" class="section">
     <div class="container">
-      <h2 class="section_title" data-translate="interview.title">Interview</h2>
+      <span><i class="fas fa-trophy"></i></span>
+      <!-- <p class="block_text smaller">That's&nbsp;it for now, so…</p> -->
+      <h2 class="section_title" data-translate="interview.headline">Congrats <span class="block_inline">for making it this far!</span></h2>
       <hr />
 
-      <a href="mailto:cro.trempont@gmail.com?subject=Hello%20there!%20👋&body=Insert%20some%20amazing%20content?" target="_top"><div class="section_block block_inline block_button">
-        <span class="upper"><i class="smaller far fa-hand-spock fa-fw"></i>&nbsp;<span data-translate="interview.button">Say&nbsp;hello!</span></span>
-      </div></a>
+      <p class="block_text bigger upper bold" data-translate="interview.description">Continue?</p>
+
+      <a href="mailto:cro.trempont@gmail.com?subject=Hello%20there!%20👋&body=" target="_top">
+        <div class="section_block block_inline block_button">
+          <span class="upper"><i class="smaller fas fa-marker fa-fw"></i>&nbsp;<span data-translate="interview.button">Yes&nbsp;/&nbsp;Yes</span></span>
+        </div>
+      </a>
     </div>
   </div>
 
