@@ -238,6 +238,12 @@
     #infos {
       margin: .75em auto;
     }
+    #congrats {
+      position: absolute;
+      top: 0; left: 0; bottom: 0; right: 0;
+      width: 100%; height: 100%;
+      z-index: 1;
+    }
     .section_title {
       font-size: 115%;
       padding-top: 1em;
@@ -268,7 +274,7 @@
     }
     .block_button:not(:hover) {
       border-color: #E39825;
-      animation: pulse 3s infinite 1s;
+      animation: pulse 3s infinite .5s;
     }
     /* Keyframes */
     @keyframes pulse {
@@ -544,22 +550,34 @@
         </div>
       </a>
     </div>
+    <canvas id="congrats" width="100%" height="100%"></canvas>
   </div>
 
   <script>
     $(document).ready(function(){
+      var canvas = false;
+
       // Check progression
       function jsJourney(){
         var distance = $(window).scrollTop() + 1;
         var em = parseFloat($('body').css('font-size'));
 
         $('.section').each(function(item){
-          if(distance >= ($(this).offset().top - (10 * em))){
+          if(distance >= $(this).offset().top - (10 * em)){
             $('#journey .current').children('i').toggleClass('fas far').parent('.current').removeClass('current');
             $('#journey a:nth-of-type(' + (item + 1) + ')').addClass('current').children('i').toggleClass('fas far');
           };
         });
+
+        // Draw canvas
+        if(canvas === false){
+          if(distance >= $('.section:last-of-type').offset().top - (10 * em)){
+            dispatchEvent(new CustomEvent('draw', {}));
+            canvas = true;
+          };
+        };
       };
+
       jsJourney();
       $(window).on('scroll orientationchange resize', function(){ jsJourney(); });
 
@@ -597,5 +615,7 @@
       });
     });
   </script>
+
+  <script src="./canvas.js" defer></script>
 </body>
 </html>
