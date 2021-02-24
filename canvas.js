@@ -15,18 +15,18 @@ document.addEventListener('DOMContentLoaded', function(){
   };
   // Define elements
   function init(){
-    emojiCount = Math.ceil(canvas.width / 20) < 20 ? Math.ceil(canvas.width / 20) : 20;
+    emojiCount = Math.ceil(canvas.width / 25) < 25 ? Math.ceil(canvas.width / 25) : 25;
 
     for(var i = 0; i < emojiCount; i++){
       x = Math.floor(Math.random() * canvas.width);
       y = Math.floor(canvas.height);
-      size = 15 + (Math.random() * (canvas.width / 15));
+      size = 25 + (Math.random() * (canvas.width / 20));
       speed = 2 + Math.random();
       angle = Math.random() * -45 * (Math.PI / 180);
       side = (Math.floor(Math.random() -.5) +.5) * 2;
-      rotation = angle * side;
-      speedX = (2 + Math.cos(angle) * speed) * side;
-      speedY = 13.5 + Math.sin(angle) * speed;
+      rotation = Math.random() * angle * side;
+      speedX = (3 + Math.cos(angle) * speed) * side;
+      speedY = 13 + Math.sin(angle) * speed;
       elasticity = .5 + (Math.random() / 4);
 
       emojis.push({
@@ -48,11 +48,11 @@ document.addEventListener('DOMContentLoaded', function(){
     for(var i = 0; i < emojiCount; i++){
       var emoji = emojis[i];
       // Rotate and draw
-      //context.save();
-      //context.translate(emoji.x + emoji.width / 2, emoji.y + emoji.height / 2);
-      //context.rotate(emoji.rotation);
-      context.drawImage(image, emoji.x - (emoji.size / 2), emoji.y - (emoji.size / 2), emoji.size, emoji.size);
-      //context.restore();
+      context.translate(emoji.x, emoji.y);
+      context.rotate(emoji.rotation);
+      context.drawImage(image, -emoji.size / 2, -emoji.size / 2, emoji.size, emoji.size);
+      context.rotate(-emoji.rotation);
+      context.translate(-emoji.x, -emoji.y);
       // Move
       //emoji.speedX -= emoji.speedX * friction;
       emoji.speedY += gravity;
@@ -109,10 +109,6 @@ document.addEventListener('DOMContentLoaded', function(){
 
     for(var i = 0; i < emojiCount; i++){
       var emoji = emojis[i];
-      // if(clickX >= emoji.x - emoji.size && clickX <= emoji.x + emoji.size){
-      //   emoji.speedX = emoji.speedX * Math.random() * 2;
-      //   emoji.speedX /= emoji.elasticity;
-      // };
       if(clickY >= emoji.y - emoji.size && clickY <= emoji.y + emoji.size){
         emoji.speedY = Math.abs(emoji.speedY) + (Math.random() * 5);
         emoji.speedY /= emoji.elasticity;
