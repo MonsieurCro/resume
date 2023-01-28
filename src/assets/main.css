@@ -1,0 +1,139 @@
+@charset "UTF-8";
+* {
+  outline: none;
+  outline-color: transparent;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-touch-callout: none;
+  -webkit-user-drag: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  color: #424242;
+  line-height: 1.25em;
+}
+*:not(input):not(select) {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+html,
+body,
+#app {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  -ms-overflow-style: none;
+  scroll-behavior: smooth;
+}
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
+a,
+.fa,
+.fab,
+.fad,
+.fal,
+.far,
+.fas {
+  text-decoration: none;
+  color: inherit;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+  margin: 0;
+}
+ul {
+  text-align: left;
+  padding-left: 2em;
+  list-style: circle;
+}
+hr {
+  width: 2.5em;
+  height: 0;
+  border: none;
+  border-bottom: 0.05em solid black;
+  margin: 0.75em auto calc(0.75em + 0.05em);
+}
+span {
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+.bold,
+h1,
+h2,
+h3,
+h3 span {
+  font-weight: 700;
+}
+.thin {
+  font-weight: 100;
+}
+.upper,
+h2,
+h3,
+h4 {
+  text-transform: uppercase;
+}
+.italic {
+  font-style: italic;
+}
+.bigger {
+  font-size: 110%;
+}
+.smaller {
+  font-size: 90%;
+}
+.justified {
+  text-align: justify;
+  text-justify: inter-word;
+}
+.block {
+  display: block;
+}
+.first_color,
+h1,
+h2 {
+  color: #225794;
+}
+.second_color,
+*:hover > i {
+  color: #e39825;
+  transition: all 0.3s ease;
+}
+.second_color_border {
+  border: 0.05em solid #e39825;
+  padding: 0.075em 0.25em;
+}
+/* Queries */
+@media screen and (min-width: 1920px) {
+  body {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 600px) {
+  body {
+    font-size: 3.25vw;
+  }
+}
+@media screen and (max-width: 450px) {
+  body {
+    font-size: 4vw;
+  }
+}

@@ -1,6 +1,13 @@
 {
   "en": {
-    "toggle": "fr",
+    "welcome": {
+      "name": "Corentin&nbsp;Trempont",
+      "title": "Digital&nbsp;Project&nbsp;Manager",
+      "phone": "+32491401719",
+      "mail": "corentin.trempont@outlook.com",
+      "linkedin": "corentin-trempont",
+      "pdf": "I'm also available as a PDF!"
+    },
     "about": {
       "title": "About&nbsp;me",
       "description": "Graduated from UCLouvain and passionate about design, I developed a strong taste for innovation that quickly drove me to the world of digital marketing. Always ready to take up new challenges and loving to meet new people, I can't wait to know more about you and your objectives. <span class=\"second_color italic\">#FeelFreeToContactMe!</span>"
@@ -13,14 +20,21 @@
           "company": "LuckyCycle",
           "location": "Brussels",
           "dates": "Jan&nbsp;2018&nbsp;-&nbsp;Present",
-          "content": "<ul class=\"block_text\"><li>Scope project requirements, develop a detailed project plan,  monitor progress and ensure timing and quality standards;</li><li>Highlight potential risks and seek improvement opportunities;</li><li>Collaborate with internal and external teams to design, develop and implement end-to-end digital projects;</li><li>Monitor, report and provide customer support.</li></ul>"
+          "content": [
+            "Scope project requirements, develop a detailed project plan, monitor progress and ensure timing and quality standards;","Highlight potential risks and seek improvement opportunities;",
+            "Collaborate with internal and external teams to design, develop and implement end-to-end digital projects;","Monitor, report and provide customer support."
+          ]
         },
         {
           "title": "<span class=\"second_color_border\">Growth&nbsp;Hacking</span>&nbsp;Internship",
           "company": "PP&nbsp;Company",
           "location": "Hainaut",
           "dates": "Mar&nbsp;2016&nbsp;-&nbsp;Apr&nbsp;2016",
-          "content": "<ul class=\"block_text\"><li>Analysis and contribution to the improvement of the company's online visibility (social&nbsp;networks & SEO&nbsp;/&nbsp;SEA);</li><li>Design, insertion and A/B&nbsp;testing of display ads;</li><li>Development of new offers in order to increase the profitability of a free-to-play online game.</li></ul>"
+          "content": [
+            "Analysis and contribution to the improvement of the company's online visibility (social&nbsp;networks & SEO&nbsp;/&nbsp;SEA);",
+            "Design, insertion and A/B&nbsp;testing of display ads;",
+            "Development of new offers in order to increase the profitability of a free-to-play online game."
+          ]
         }
       ]
     },
@@ -32,20 +46,30 @@
           "company": "UCLouvain&nbsp;<span class=\"second_color\">\\</span>&nbsp;LSM",
           "location": "Hainaut",
           "dates": "Sep&nbsp;2013&nbsp;-&nbsp;Aug&nbsp;2018",
-          "content": "<p class=\"block_text\">Wide-ranging&nbsp;knowledge of management&nbsp;and&nbsp;economics.</p><p class=\"block_text\"><span class=\"second_color\">></span>&nbsp;Majors: Business&nbsp;Analytics <span class=\"second_color\">∙</span> Digital&nbsp;Marketing</p>"
+          "content": [
+            "Wide-ranging&nbsp;knowledge of management&nbsp;and&nbsp;economics.",
+            "<span class=\"second_color\">></span>&nbsp;Majors: Business&nbsp;Analytics <span class=\"second_color\">∙</span> Digital&nbsp;Marketing"
+          ]
         },
         {
           "title": "C<span class=\"second_color\">.</span>E<span class=\"second_color\">.</span>S<span class=\"second_color\">.</span>S&nbsp;in Science&nbsp;<span class=\"second_color\">/</span>&nbsp;Math",
           "company": "Saint&nbsp;Joseph&nbsp;Institute",
           "location": "Hainaut",
           "dates": "Sep&nbsp;2007&nbsp;-&nbsp;Aug&nbsp;2013",
-          "content": "<p class=\"block_text\">Language immersion with some courses given in Dutch.</p>"
+          "content": [
+            "Language immersion with some courses given in Dutch."
+          ]
         }
       ]
     },
     "certifications": {
       "title": "Certifications",
       "blocks": [
+        {
+          "title": "<a href=\"https://www.credential.net/996964b8-217b-499d-a297-0f60b0e91ef5?key=6b425624a8eb4457ef38f8aaa5b4eb7fb6e13d21f67243c1d26909b1eae487a2\" target=\"_blank\">Associate Cloud&nbsp;Engineer</a> <span class=\"second_color\">/</span> <a href=\"https://drive.google.com/file/d/14IK-aRZapWruozoozQt0WOJjnMYhnm-N/view?usp=sharing\" target=\"_blank\">Google&nbsp;Analytics for Beginners</a> <span class=\"second_color\">/</span> <a href=\"https://drive.google.com/file/d/1hoOG1qQd1NLA51U-zOna03y_xHFKjWRF/view?usp=sharing\" target=\"_blank\">Google Tag&nbsp;Manager Fundamentals</a>",
+          "company": "Google",
+          "dates": "2017"
+        },
         {
           "title": "Microsoft Azure&nbsp;Fundamentals (<a href=\"https://drive.google.com/file/d/1AVrdOdDpxYTClBT6Zz5qb5pcxq4ajwQz/view?usp=sharing\" target=\"_blank\">AZ-900</a>,&nbsp;<a href=\"https://drive.google.com/file/d/1EpHnoSQqD3VA83vRb9fVUZCU0HzHO1V_/view?usp=sharing\" target=\"_blank\">AI-900</a>,&nbsp;<a href=\"https://drive.google.com/file/d/1VsACNTDeAFwACDO1bG0bVejsE1DVkZ7L/view?usp=sharing\" target=\"_blank\">DP-900</a>)</a>",
           "company": "Microsoft",
@@ -60,11 +84,6 @@
           "title": "<a href=\"https://drive.google.com/file/d/1jMBWZKzWDvwms95oE-mIGFIGUHAn7O7Q/view?usp=sharing\" target=\"_blank\">Digital&nbsp;Buyer Learning&nbsp;Path (Facebook&nbsp;Ads)</a>",
           "company": "Facebook",
           "dates": "2019"
-        },
-        {
-          "title": "<a href=\"https://drive.google.com/file/d/14IK-aRZapWruozoozQt0WOJjnMYhnm-N/view?usp=sharing\" target=\"_blank\">Google&nbsp;Analytics for Beginners</a> <span class=\"second_color\">/</span> <a href=\"https://drive.google.com/file/d/1hoOG1qQd1NLA51U-zOna03y_xHFKjWRF/view?usp=sharing\" target=\"_blank\">Google Tag&nbsp;Manager Fundamentals</a>",
-          "company": "Google",
-          "dates": "2017"
         }
       ]
     },
@@ -73,23 +92,40 @@
       "blocks": [
         {
           "title": "Office&nbsp;Suite",
-          "icons": "<i class=\"fas fa-file-word\"></i>&nbsp;<i class=\"fas fa-file-excel\"></i>&nbsp;<i class=\"fas fa-file-powerpoint\"></i>&nbsp;<i class=\"smaller fas fa-plus\"></i>"
+          "icons": [
+            "fas fa-file-word",
+            "fas fa-file-excel",
+            "fas fa-file-powerpoint",
+            "smaller fas fa-plus"
+          ]
         },
         {
           "title": "Adobe&nbsp;Suite",
-          "icons": "<i class=\"fas fa-file-image\"></i>&nbsp;<i class=\"fas fa-magic\"></i>"
+          "icons": [
+            "fas fa-file-image",
+            "fas fa-magic"
+          ]
         },
         {
           "title": "Web&nbsp;Languages",
-          "icons": "<i class=\"fab fa-html5\"></i>&nbsp;<i class=\"fab fa-css3-alt\"></i>&nbsp;<i class=\"fab fa-js-square\"></i>&nbsp;<i class=\"fab fa-vuejs\"></i>"
+          "icons": [
+            "fab fa-html5",
+            "fab fa-css3-alt",
+            "fab fa-js-square",
+            "fab fa-vuejs"
+          ]
         },
         {
           "title": "Facebook&nbsp;Ads",
-          "icons": "<i class=\"fab fa-facebook\"></i>"
+          "icons": [
+            "fab fa-facebook"
+          ]
         },
         {
           "title": "Google&nbsp;Analytics",
-          "icons": "<i class=\"fab fa-google\"></i>"
+          "icons": [
+            "fab fa-google"
+          ]
         }
       ]
     },
@@ -99,33 +135,58 @@
         {
           "title": "French",
           "level": "Native",
-          "icons": "<i class=\"fas fa-laugh\"></i>&nbsp;<i class=\"fas fa-laugh\"></i>&nbsp;<i class=\"fas fa-laugh\"></i>&nbsp;<i class=\"fas fa-laugh\"></i>&nbsp;<i class=\"fas fa-laugh\"></i>&nbsp;<i class=\"fas fa-laugh\"></i>"
+          "icons": [
+            "fas fa-laugh",
+            "fas fa-laugh",
+            "fas fa-laugh",
+            "fas fa-laugh",
+            "fas fa-laugh",
+            "fas fa-laugh"
+          ]
         },
         {
           "title": "English",
           "level": "C1",
-          "icons": "<i class=\"fas fa-laugh\"></i>&nbsp;<i class=\"fas fa-laugh\"></i>&nbsp;<i class=\"fas fa-laugh\"></i>&nbsp;<i class=\"fas fa-laugh\"></i>&nbsp;<i class=\"fas fa-laugh\"></i>&nbsp;<i class=\"far fa-meh-blank\"></i>"
+          "icons": [
+            "fas fa-laugh",
+            "fas fa-laugh",
+            "fas fa-laugh",
+            "fas fa-laugh",
+            "fas fa-laugh",
+            "far fa-meh-blank"
+          ]
         },
         {
           "title": "Dutch",
           "level": "B2",
-          "icons": "<i class=\"fas fa-laugh\"></i>&nbsp;<i class=\"fas fa-laugh\"></i>&nbsp;<i class=\"fas fa-laugh\"></i>&nbsp;<i class=\"fas fa-laugh\"></i>&nbsp;<i class=\"far fa-meh-blank\"></i>&nbsp;<i class=\"far fa-meh-blank\"></i>"
+          "icons": [
+            "fas fa-laugh",
+            "fas fa-laugh",
+            "fas fa-laugh",
+            "fas fa-laugh",
+            "far fa-meh-blank",
+            "far fa-meh-blank"
+          ]
         }
       ]
     },
-    "portfolio": {
-      "title": "Portfolio",
-      "button": "My&nbsp;works"
-    },
     "interview": {
-      "title": "Interview",
-      "headline": "Congrats <span class=\"block_inline\">for making it this far!</span>",
-      "description": "Continue?",
-      "button": "Yes&nbsp;/&nbsp;Yes"
+      "end": "That's&nbsp;it for now, so…",
+      "title": "Congrats <span class=\"block_inline\">for making it this far!</span>",
+      "subtitle": "Continue?",
+      "subject": "Hello%20there!%20👋",
+      "cta": "Yes&nbsp;/&nbsp;Yes"
     }
   },
   "fr": {
-    "toggle": "en",
+    "welcome": {
+      "name": "Corentin&nbsp;Trempont",
+      "title": "Digital&nbsp;Project&nbsp;Manager",
+      "phone": "+32491401719",
+      "mail": "corentin.trempont@outlook.com",
+      "linkedin": "corentin-trempont",
+      "pdf": "Aussi téléchargeable en PDF !"
+    },
     "about": {
       "title": "À&nbsp;propos",
       "description": "Diplômé de l'UCLouvain et passionné par le design, je me suis vite tourné vers le monde du marketing digital, poussé par mon goût prononcé pour l'innovation. Toujours prêt à relever de nouveaux défis et aimant rencontrer de nouvelles personnes, je suis impatient d'en apprendre plus sur vous et vos objectifs. <span class=\"second_color italic\">#NHésitezPasÀMeContacter!</span>"
@@ -138,14 +199,23 @@
           "company": "LuckyCycle",
           "location": "Bruxelles",
           "dates": "Janvier&nbsp;2018&nbsp;à&nbsp;aujourd'hui",
-          "content": "<ul class=\"block_text\"><li>Définir les spécifications du projet, élaborer un plan de projet détaillé, suivre les progrès et assurer le respect des délais et des normes de qualité&nbsp;;</li><li>Mettre en évidence les risques potentiels et rechercher les possibilités d'amélioration&nbsp;;</li><li>Collaborer avec les équipes internes et externes pour concevoir, développer et mettre en œuvre des projets numériques de bout en bout&nbsp;;</li><li>Contrôler, rapporter et fournir une assistance aux clients.</li></ul>"
+          "content": [
+            "Définir les spécifications du projet, élaborer un plan de projet détaillé, suivre les progrès et assurer le respect des délais et des normes de qualité&nbsp;;",
+            "Mettre en évidence les risques potentiels et rechercher les possibilités d'amélioration&nbsp;;",
+            "Collaborer avec les équipes internes et externes pour concevoir, développer et mettre en œuvre des projets numériques de bout en bout&nbsp;",
+            "Contrôler, rapporter et fournir une assistance aux clients."
+          ]
         },
         {
           "title": "Stage&nbsp;en&nbsp;<span class=\"second_color_border\">Growth&nbsp;Hacking</span>",
           "company": "PP&nbsp;Company",
           "location": "Hainaut",
           "dates": "Mars&nbsp;2016&nbsp;à&nbsp;avril&nbsp;2016",
-          "content": "<ul class=\"block_text\"><li>Analyse et contribution à l'amélioration de la visibilité en ligne de l'entreprise (réseaux&nbsp;sociaux & SEO&nbsp;/&nbsp;SEA)&nbsp;</li><li>Conception, insertion et tests&nbsp;A/B de publicités&nbsp;</li><li>Élaboration de nouvelles offres afin d'augmenter la rentabilité d'un jeu en ligne «&nbsp;free-to-play&nbsp;».</li></ul>"
+          "content": [
+            "Analyse et contribution à l'amélioration de la visibilité en ligne de l'entreprise (réseaux&nbsp;sociaux & SEO&nbsp;/&nbsp;SEA)&nbsp;",
+            "Conception, insertion et tests&nbsp;A/B de publicités&nbsp;",
+            "Élaboration de nouvelles offres afin d'augmenter la rentabilité d'un jeu en ligne «&nbsp;free-to-play&nbsp;»."
+          ]
         }
       ]
     },
@@ -157,20 +227,30 @@
           "company": "UCLouvain&nbsp;<span class=\"second_color\">\\</span>&nbsp;LSM",
           "location": "Hainaut",
           "dates": "Septembre&nbsp;2013&nbsp;à&nbsp;août&nbsp;2018",
-          "content": "<p class=\"block_text\">Connaissance&nbsp;transversale du&nbsp;management et de&nbsp;l'économie.</p><p class=\"block_text\"><span class=\"second_color\">></span>&nbsp;Spécialisations&nbsp;: Business&nbsp;Analytics <span class=\"second_color\">∙</span> Digital&nbsp;Marketing</p>"
+          "content": [
+            "Connaissance&nbsp;transversale du&nbsp;management et de&nbsp;l'économie.",
+            "<span class=\"second_color\">></span>&nbsp;Spécialisations&nbsp;: Business&nbsp;Analytics <span class=\"second_color\">∙</span> Digital&nbsp;Marketing"
+          ]
         },
         {
           "title": "C<span class=\"second_color\">.</span>E<span class=\"second_color\">.</span>S<span class=\"second_color\">.</span>S&nbsp;en Sciences&nbsp;<span class=\"second_color\">/</span>&nbsp;Math",
           "company": "Institut&nbsp;Saint&nbsp;Joseph",
           "location": "Hainaut",
           "dates": "Septembre&nbsp;2007&nbsp;à&nbsp;août&nbsp;2013",
-          "content": "<p class=\"block_text\">Immersion&nbsp;linguistique avec certains cours donnés en néerlandais.</p>"
+          "content": [
+            "Immersion&nbsp;linguistique avec certains cours donnés en néerlandais."
+          ]
         }
       ]
     },
     "certifications": {
       "title": "Certifications",
       "blocks": [
+        {
+          "title": "<a href=\"https://www.credential.net/996964b8-217b-499d-a297-0f60b0e91ef5?key=6b425624a8eb4457ef38f8aaa5b4eb7fb6e13d21f67243c1d26909b1eae487a2\" target=\"_blank\">Associate Cloud&nbsp;Engineer</a> <span class=\"second_color\">/</span> <a href=\"https://drive.google.com/file/d/14IK-aRZapWruozoozQt0WOJjnMYhnm-N/view?usp=sharing\" target=\"_blank\">Google&nbsp;Analytics for Beginners</a> <span class=\"second_color\">/</span> <a href=\"https://drive.google.com/file/d/1hoOG1qQd1NLA51U-zOna03y_xHFKjWRF/view?usp=sharing\" target=\"_blank\">Google Tag&nbsp;Manager Fundamentals</a>",
+          "company": "Google",
+          "dates": "2017"
+        },
         {
           "title": "Microsoft Azure&nbsp;Fundamentals (<a href=\"https://drive.google.com/file/d/1AVrdOdDpxYTClBT6Zz5qb5pcxq4ajwQz/view?usp=sharing\" target=\"_blank\">AZ-900</a>,&nbsp;<a href=\"https://drive.google.com/file/d/1EpHnoSQqD3VA83vRb9fVUZCU0HzHO1V_/view?usp=sharing\" target=\"_blank\">AI-900</a>,&nbsp;<a href=\"https://drive.google.com/file/d/1VsACNTDeAFwACDO1bG0bVejsE1DVkZ7L/view?usp=sharing\" target=\"_blank\">DP-900</a>)</a>",
           "company": "Microsoft",
@@ -185,11 +265,6 @@
           "title": "<a href=\"https://drive.google.com/file/d/1jMBWZKzWDvwms95oE-mIGFIGUHAn7O7Q/view?usp=sharing\" target=\"_blank\">Digital&nbsp;Buyer Learning&nbsp;Path (Facebook&nbsp;Ads)</a>",
           "company": "Facebook",
           "dates": "2019"
-        },
-        {
-          "title": "<a href=\"https://drive.google.com/file/d/14IK-aRZapWruozoozQt0WOJjnMYhnm-N/view?usp=sharing\" target=\"_blank\">Google&nbsp;Analytics for Beginners</a> <span class=\"second_color\">/</span> <a href=\"https://drive.google.com/file/d/1hoOG1qQd1NLA51U-zOna03y_xHFKjWRF/view?usp=sharing\" target=\"_blank\">Google Tag&nbsp;Manager Fundamentals</a>",
-          "company": "Google",
-          "dates": "2017"
         }
       ]
     },
@@ -198,23 +273,40 @@
       "blocks": [
         {
           "title": "Suite&nbsp;Office",
-          "icons": "<i class=\"fas fa-file-word\"></i>&nbsp;<i class=\"fas fa-file-excel\"></i>&nbsp;<i class=\"fas fa-file-powerpoint\"></i>&nbsp;<i class=\"smaller fas fa-plus\"></i>"
+          "icons": [
+            "fas fa-file-word",
+            "fas fa-file-excel",
+            "fas fa-file-powerpoint",
+            "smaller fas fa-plus"
+          ]
         },
         {
           "title": "Suite&nbsp;Adobe",
-          "icons": "<i class=\"fas fa-file-image\"></i>&nbsp;<i class=\"fas fa-magic\"></i>"
+          "icons": [
+            "fas fa-file-image",
+            "fas fa-magic"
+          ]
         },
         {
           "title": "Languages&nbsp;Web",
-          "icons": "<i class=\"fab fa-html5\"></i>&nbsp;<i class=\"fab fa-css3-alt\"></i>&nbsp;<i class=\"fab fa-js-square\"></i>&nbsp;<i class=\"fab fa-vuejs\"></i>"
+          "icons": [
+            "fab fa-html5",
+            "fab fa-css3-alt",
+            "fab fa-js-square",
+            "fab fa-vuejs"
+          ]
         },
         {
           "title": "Facebook&nbsp;Ads",
-          "icons": "<i class=\"fab fa-facebook\"></i>"
+          "icons": [
+            "fab fa-facebook"
+          ]
         },
         {
           "title": "Google&nbsp;Analytics",
-          "icons": "<i class=\"fab fa-google\"></i>"
+          "icons": [
+            "fab fa-google"
+          ]
         }
       ]
     },
@@ -224,29 +316,47 @@
         {
           "title": "Français",
           "level": "Natif",
-          "icons": "<i class=\"fas fa-laugh\"></i>&nbsp;<i class=\"fas fa-laugh\"></i>&nbsp;<i class=\"fas fa-laugh\"></i>&nbsp;<i class=\"fas fa-laugh\"></i>&nbsp;<i class=\"fas fa-laugh\"></i>&nbsp;<i class=\"fas fa-laugh\"></i>"
+          "icons": [
+            "fas fa-laugh",
+            "fas fa-laugh",
+            "fas fa-laugh",
+            "fas fa-laugh",
+            "fas fa-laugh",
+            "fas fa-laugh"
+          ]
         },
         {
           "title": "Anglais",
           "level": "C1",
-          "icons": "<i class=\"fas fa-laugh\"></i>&nbsp;<i class=\"fas fa-laugh\"></i>&nbsp;<i class=\"fas fa-laugh\"></i>&nbsp;<i class=\"fas fa-laugh\"></i>&nbsp;<i class=\"fas fa-laugh\"></i>&nbsp;<i class=\"far fa-meh-blank\"></i>"
+          "icons": [
+            "fas fa-laugh",
+            "fas fa-laugh",
+            "fas fa-laugh",
+            "fas fa-laugh",
+            "fas fa-laugh",
+            "far fa-meh-blank"
+          ]
         },
         {
           "title": "Néerlandais",
           "level": "B2",
-          "icons": "<i class=\"fas fa-laugh\"></i>&nbsp;<i class=\"fas fa-laugh\"></i>&nbsp;<i class=\"fas fa-laugh\"></i>&nbsp;<i class=\"fas fa-laugh\"></i>&nbsp;<i class=\"far fa-meh-blank\"></i>&nbsp;<i class=\"far fa-meh-blank\"></i>"
+          "icons": [
+            "fas fa-laugh",
+            "fas fa-laugh",
+            "fas fa-laugh",
+            "fas fa-laugh",
+            "far fa-meh-blank",
+            "far fa-meh-blank"
+          ]
         }
       ]
     },
-    "portfolio": {
-      "title": "Portfolio",
-      "button": "Mes&nbsp;réalisations"
-    },
     "interview": {
-      "title": "Interview",
-      "headline": "Félicitations <span class=\"block_inline\">pour être arrivé jusqu'ici&nbsp;!</span>",
-      "description": "Continuer&nbsp;?",
-      "button": "Oui&nbsp;/&nbsp;Oui"
+      "end": "C'est tout pour le moment, donc…",
+      "title": "Félicitations <span class=\"block_inline\">pour être arrivé jusqu'ici&nbsp;!</span>",
+      "subtitle": "Continuer&nbsp;?",
+      "subject": "Salut%20!%20👋",
+      "cta": "Oui&nbsp;/&nbsp;Oui"
     }
   }
 }
