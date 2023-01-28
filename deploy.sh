@@ -11,7 +11,7 @@ cd dist
 
 git init
 git add -A
-git commit -m 'deploy'
+git commit -m 'New live version'
 
 git push -f git@github.com:MonsieurCro/resume.git master:gh-pages
 

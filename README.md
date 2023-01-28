@@ -1,4 +1,8 @@
-# resume-vue
+# resume
+
+[/resume/](https://monsieurcro.github.io/resume/)
+
+---
 
 This template should help get you started developing with Vue 3 in Vite.
 
