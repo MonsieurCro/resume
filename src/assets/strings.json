@@ -1,8 +1,8 @@
 {
   "en": {
     "welcome": {
-      "name": "Corentin&nbsp;Trempont",
-      "title": "Digital&nbsp;Project&nbsp;Manager",
+      "title": "Corentin&nbsp;Trempont",
+      "subtitle": "Digital&nbsp;Project&nbsp;Manager",
       "phone": "+32491401719",
       "mail": "corentin.trempont@outlook.com",
       "linkedin": "corentin-trempont",
@@ -172,16 +172,16 @@
     },
     "interview": {
       "end": "That's&nbsp;it for now, so…",
-      "title": "Congrats <span class=\"block_inline\">for making it this far!</span>",
-      "subtitle": "Continue?",
+      "subtitle": "Congrats <span class=\"block_inline\">for making it this far!</span>",
+      "title": "Continue?",
       "subject": "Hello%20there!%20👋",
       "cta": "Yes&nbsp;/&nbsp;Yes"
     }
   },
   "fr": {
     "welcome": {
-      "name": "Corentin&nbsp;Trempont",
-      "title": "Digital&nbsp;Project&nbsp;Manager",
+      "title": "Corentin&nbsp;Trempont",
+      "subtitle": "Digital&nbsp;Project&nbsp;Manager",
       "phone": "+32491401719",
       "mail": "corentin.trempont@outlook.com",
       "linkedin": "corentin-trempont",
@@ -353,8 +353,8 @@
     },
     "interview": {
       "end": "C'est tout pour le moment, donc…",
-      "title": "Félicitations <span class=\"block_inline\">pour être arrivé jusqu'ici&nbsp;!</span>",
-      "subtitle": "Continuer&nbsp;?",
+      "subtitle": "Félicitations <span class=\"block_inline\">pour être arrivé jusqu'ici&nbsp;!</span>",
+      "title": "Continuer&nbsp;?",
       "subject": "Salut%20!%20👋",
       "cta": "Oui&nbsp;/&nbsp;Oui"
     }

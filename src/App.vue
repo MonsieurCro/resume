@@ -4,7 +4,7 @@
 
 <script lang="ts">
 import { useRoute } from "vue-router";
-import strings from "./assets/strings.json";
+import config from "./stores/config.json";
 
 export default {
   data() {
@@ -18,7 +18,8 @@ export default {
     const targetLang = (route.params.lang as string).toLowerCase() || "";
     if (
       targetLang &&
-      Object.prototype.hasOwnProperty.call(strings, targetLang)
+      targetLang !== this.lang &&
+      config.availableLangs.includes(targetLang)
     ) {
       this.lang = targetLang;
     }

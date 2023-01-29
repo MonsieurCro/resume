@@ -1,150 +1,147 @@
 <!-- eslint-disable prettier/prettier -->
 <template>
-  <!-- Toggle -->
-  <div id="toggle">
-    <div class="toggle" v-for="(lang, index) in langs" :key="index" @click="$emit('toggleLang', lang)">{{ lang.toUpperCase() }}</div>
-  </div>
-
-  <!-- Journey -->
-  <div id="journey">
-    <a href="#welcome" target="_self" class="bigger current"><span class="smaller" v-html="text.welcome.name"></span>&nbsp;<i class="fas fa-circle"></i></a>
-    <a href="#about" target="_self" class="bigger"><span class="smaller" v-html="text.about.title"></span>&nbsp;<i class="far fa-circle"></i></a>
-    <a href="#experience" target="_self" class="bigger"><span class="smaller" v-html="text.experience.title"></span>&nbsp;<i class="far fa-circle"></i></a>
-    <a href="#education" target="_self" class="bigger"><span class="smaller" v-html="text.education.title"></span>&nbsp;<i class="far fa-circle"></i></a>
-    <a href="#certifications" target="_self" class="bigger"><span class="smaller" v-html="text.certifications.title"></span>&nbsp;<i class="far fa-circle"></i></a>
-    <a href="#skills" target="_self" class="bigger"><span class="smaller" v-html="text.skills.title"></span>&nbsp;<i class="far fa-circle"></i></a>
-    <a href="#languages" target="_self" class="bigger"><span class="smaller" v-html="text.languages.title"></span>&nbsp;<i class="far fa-circle"></i></a>
-    <a href="#interview" target="_self" class="bigger"><span class="smaller" v-html="text.interview.subtitle"></span>&nbsp;<i class="far fa-check-circle"></i></a>
-  </div>
-
-  <!-- Header -->
-  <div id="welcome" class="section">
-    <div class="container">
-      <div id="logo">
-        <img class="good" src="../assets/profile.jpg" title="" alt="CT" />
-        <a href="https://drive.google.com/file/d/1hh8Pe0Lg_vwgOCKh4-EigJ8WhFI_r-Xb/view?usp=sharing" target="_blank" :title="text.welcome.pdf"><span><i class="fas fa-clipboard-check"></i><br />PDF</span></a>
-      </div>
-
-      <div id="infos">
-        <h1 v-html="text.welcome.name"></h1>
-        <span class="bigger upper" v-html="text.welcome.title"></span>
-      </div>
-
-      <hr />
-
-      <div id="contact">
-        <a v-if="false" :href="'tel:' + text.welcome.phone" target="_top"><span class="smaller bold block"><i class="fas fa-phone-alt fa-fw"></i>&nbsp;{{ text.welcome.phone }}</span></a>
-        <a :href="'mailto:' + text.welcome.mail" target="_top"><span class="smaller bold block"><i class="fas fa-envelope fa-fw"></i>&nbsp;{{ text.welcome.mail }}</span></a>
-        <a :href="'https://www.linkedin.com/in/' + text.welcome.linkedin + '/'" target="_blank"><span class="smaller bold block"><i class="fab fa-linkedin fa-fw"></i>&nbsp;linkedin.com/in/{{ text.welcome.linkedin }}</span></a>
-      </div>
+  <div id="frame" ref="scrollContainer">
+    <!-- Toggle -->
+    <div id="toggle">
+      <div class="toggle" v-for="(lang, index) in langs" :key="index" @click="$emit('toggleLang', lang)">{{ lang.toUpperCase() }}</div>
     </div>
 
-    <div id="start">
-      <a href="#about" target="_self"><i class="fas fa-long-arrow-alt-down"></i></a>
-    </div>
-  </div>
-
-  <!-- About -->
-  <div id="about" class="section">
-    <div class="container">
-      <h2 class="section_title" v-html="text.about.title"></h2>
-      <hr />
-
-      <div class="section_block">
-        <p class="block_text justified" v-html="text.about.description"></p>
-      </div>
-
-      <a href="#experience" target="_self"><div class="next"><i class="fas fa-angle-double-down"></i></div></a>
-    </div>
-  </div>
-
-  <!-- Experience -->
-  <div id="experience" class="section">
-    <div class="container">
-      <h2 class="section_title" v-html="text.experience.title"></h2>
-      <hr />
-
-      <div class="section_block" v-for="(item, index) in text.experience.blocks" :key="index">
-        <h3 class="block_title" v-html="item.title"></h3>
-        <h5 class="block_info"><span class="upper" v-html="item.company"></span> | <span v-html="item.location"></span> | <span v-html="item.dates"></span></h5>
-        <ul class="block_text">
-          <li v-for="(itm, idx) in item.content" :key="idx" v-html="itm"></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <!-- Education -->
-  <div id="education" class="section">
-    <div class="container">
-      <h2 class="section_title" v-html="text.education.title"></h2>
-      <hr />
-
-      <div class="section_block" v-for="(item, index) in text.education.blocks" :key="index">
-        <h3 class="block_title" v-html="item.title"></h3>
-        <h5 class="block_info"><span class="upper" v-html="item.company"></span> | <span v-html="item.location"></span> | <span v-html="item.dates"></span></h5>
-          <p class="block_text" v-for="(itm, idx) in item.content" :key="idx" v-html="itm"></p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Certifications -->
-  <div id="certifications" class="section">
-    <div class="container">
-      <h2 class="section_title" v-html="text.certifications.title"></h2>
-      <hr />
-
-      <div class="section_block" v-for="(item, index) in text.certifications.blocks" :key="index">
-        <h4 class="block_subtitle"><span class="second_color">+</span>&nbsp;<span v-html="item.title"></span>&nbsp;<span class="second_color">+</span></h4>
-        <h5 class="block_info"><span v-html="item.company"></span><!-- | <span v-html="item.dates"></span> --></h5>
-      </div>
-    </div>
-  </div>
-
-  <!-- Skills -->
-  <div id="skills" class="section">
-    <div class="container">
-      <h2 class="section_title" v-html="text.skills.title"></h2>
-      <hr />
-
-      <div class="section_block" v-for="(item, index) in text.skills.blocks" :key="index">
-        <h4 class="block_subtitle"><span v-html="item.title"></span>&nbsp;[&nbsp;<span><i v-for="(itm, idx) in item.icons" :key="idx" :class="itm" class="inline-icon"></i></span>&nbsp;]</h4>
-      </div>
-
-      <span><i class="fas fa-terminal"></i></span>
-    </div>
-  </div>
-
-  <!-- Languages -->
-  <div id="languages" class="section">
-    <div class="container">
-      <h2 class="section_title" v-html="text.languages.title"></h2>
-      <hr />
-
-      <div class="section_block block_inline" v-for="(item, index) in text.languages.blocks" :key="index">
-        <h4 class="block_subtitle"><span v-html="item.title"></span>&nbsp;<span class="second_color">\</span>&nbsp;<span class="bold" v-html="item.level"></span></h4>
-        <p class="block_text"><i v-for="(itm, idx) in item.icons" :key="idx" :class="itm" class="inline-icon"></i></p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Interview -->
-  <div id="interview" class="section">
-    <div class="container">
-      <span><i class="fas fa-trophy"></i></span>
-      <!-- <p class="block_text smaller" v-html="text.interview.end"></p> -->
-      <h2 class="section_title" v-html="text.interview.title"></h2>
-      <hr />
-
-      <p class="block_text bigger upper bold" v-html="text.interview.subtitle"></p>
-
-      <a :href="'mailto:' + text.welcome.mail + '?subject=' + text.interview.subject" target="_top">
-        <div class="section_block block_inline block_button">
-          <span class="upper"><i class="smaller fa-solid fa-paper-plane fa-fw"></i>&nbsp;<span v-html="text.interview.cta"></span></span>
-        </div>
+    <!-- Journey -->
+    <div id="journey">
+      <a v-for="(item, key, index) in text" :key="index" :href="'#' + key" class="bigger" :class="{ 'current' : String(key) === currentSection }">
+        <span class="smaller" v-html="item.title"></span>&nbsp;<i :class="[ index === Object.keys(text).length -1 ? 'fa-check-circle' : 'fa-circle', String(key) === currentSection ? 'fas' : 'far' ]"></i>
       </a>
     </div>
-    <canvas id="congrats" width="100%" height="100%"></canvas>
+
+    <!-- Header -->
+    <div id="welcome" class="section">
+      <div class="container">
+        <div id="logo">
+          <img class="good" src="../assets/profile.jpg" title="" alt="CT" />
+          <a href="https://drive.google.com/file/d/1hh8Pe0Lg_vwgOCKh4-EigJ8WhFI_r-Xb/view?usp=sharing" target="_blank" :title="text.welcome.pdf"><span><i class="fas fa-clipboard-check"></i><br />PDF</span></a>
+        </div>
+
+        <div id="infos">
+          <h1 v-html="text.welcome.title"></h1>
+          <span class="bigger upper" v-html="text.welcome.subtitle"></span>
+        </div>
+
+        <hr />
+
+        <div id="contact">
+          <a v-if="false" :href="'tel:' + text.welcome.phone" target="_top"><span class="smaller bold block"><i class="fas fa-phone-alt fa-fw"></i>&nbsp;{{ text.welcome.phone }}</span></a>
+          <a :href="'mailto:' + text.welcome.mail" target="_top"><span class="smaller bold block"><i class="fas fa-envelope fa-fw"></i>&nbsp;{{ text.welcome.mail }}</span></a>
+          <a :href="'https://www.linkedin.com/in/' + text.welcome.linkedin + '/'" target="_blank"><span class="smaller bold block"><i class="fab fa-linkedin fa-fw"></i>&nbsp;linkedin.com/in/{{ text.welcome.linkedin }}</span></a>
+        </div>
+      </div>
+
+      <div id="start">
+        <a href="#about" target="_self"><i class="fas fa-long-arrow-alt-down"></i></a>
+      </div>
+    </div>
+
+    <!-- About -->
+    <div id="about" class="section">
+      <div class="container">
+        <h2 class="section_title" v-html="text.about.title"></h2>
+        <hr />
+
+        <div class="section_block">
+          <p class="block_text justified" v-html="text.about.description"></p>
+        </div>
+
+        <a href="#experience" target="_self"><div class="next"><i class="fas fa-angle-double-down"></i></div></a>
+      </div>
+    </div>
+
+    <!-- Experience -->
+    <div id="experience" class="section">
+      <div class="container">
+        <h2 class="section_title" v-html="text.experience.title"></h2>
+        <hr />
+
+        <div class="section_block" v-for="(item, index) in text.experience.blocks" :key="index">
+          <h3 class="block_title" v-html="item.title"></h3>
+          <h5 class="block_info"><span class="upper" v-html="item.company"></span> | <span v-html="item.location"></span> | <span v-html="item.dates"></span></h5>
+          <ul class="block_text">
+            <li v-for="(itm, idx) in item.content" :key="idx" v-html="itm"></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Education -->
+    <div id="education" class="section">
+      <div class="container">
+        <h2 class="section_title" v-html="text.education.title"></h2>
+        <hr />
+
+        <div class="section_block" v-for="(item, index) in text.education.blocks" :key="index">
+          <h3 class="block_title" v-html="item.title"></h3>
+          <h5 class="block_info"><span class="upper" v-html="item.company"></span> | <span v-html="item.location"></span> | <span v-html="item.dates"></span></h5>
+            <p class="block_text" v-for="(itm, idx) in item.content" :key="idx" v-html="itm"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Certifications -->
+    <div id="certifications" class="section">
+      <div class="container">
+        <h2 class="section_title" v-html="text.certifications.title"></h2>
+        <hr />
+
+        <div class="section_block" v-for="(item, index) in text.certifications.blocks" :key="index">
+          <h4 class="block_subtitle"><span class="second_color">+</span>&nbsp;<span v-html="item.title"></span>&nbsp;<span class="second_color">+</span></h4>
+          <h5 class="block_info"><span v-html="item.company"></span><!-- | <span v-html="item.dates"></span> --></h5>
+        </div>
+      </div>
+    </div>
+
+    <!-- Skills -->
+    <div id="skills" class="section">
+      <div class="container">
+        <h2 class="section_title" v-html="text.skills.title"></h2>
+        <hr />
+
+        <div class="section_block" v-for="(item, index) in text.skills.blocks" :key="index">
+          <h4 class="block_subtitle"><span v-html="item.title"></span>&nbsp;[&nbsp;<span><i v-for="(itm, idx) in item.icons" :key="idx" :class="itm" class="inline-icon"></i></span>&nbsp;]</h4>
+        </div>
+
+        <span><i class="fas fa-terminal"></i></span>
+      </div>
+    </div>
+
+    <!-- Languages -->
+    <div id="languages" class="section">
+      <div class="container">
+        <h2 class="section_title" v-html="text.languages.title"></h2>
+        <hr />
+
+        <div class="section_block block_inline" v-for="(item, index) in text.languages.blocks" :key="index">
+          <h4 class="block_subtitle"><span v-html="item.title"></span>&nbsp;<span class="second_color">\</span>&nbsp;<span class="bold" v-html="item.level"></span></h4>
+          <p class="block_text"><i v-for="(itm, idx) in item.icons" :key="idx" :class="itm" class="inline-icon"></i></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Interview -->
+    <div id="interview" class="section">
+      <div class="container">
+        <span><i class="fas fa-trophy"></i></span>
+        <!-- <p class="block_text smaller" v-html="text.interview.end"></p> -->
+        <h2 class="section_title" v-html="text.interview.title"></h2>
+        <hr />
+
+        <p class="block_text bigger upper bold" v-html="text.interview.subtitle"></p>
+
+        <a :href="'mailto:' + text.welcome.mail + '?subject=' + text.interview.subject" target="_top">
+          <div class="section_block block_inline block_button">
+            <span class="upper"><i class="smaller fa-solid fa-paper-plane fa-fw"></i>&nbsp;<span v-html="text.interview.cta"></span></span>
+          </div>
+        </a>
+      </div>
+      <canvas id="congrats" width="100%" height="100%"></canvas>
+    </div>
   </div>
 </template>
 
@@ -167,6 +164,7 @@ export default {
   data() {
     return {
       strings: strings as StringObject,
+      currentSection: "welcome",
     };
   },
   computed: {
@@ -177,10 +175,37 @@ export default {
       return Object.keys(this.strings).filter((key) => key !== this.lang);
     },
   },
-  mounted() {},
-  methods: {},
+  mounted() {
+    const container = this.$refs.scrollContainer as HTMLDivElement;
+    const options = {
+      root: container,
+      threshold: [0.75],
+    };
+    const observer = new IntersectionObserver(
+      (entries) => this.handleIntersection(entries),
+      options
+    );
+    const sections = container.getElementsByClassName("section");
+    for (let i = 0; i < sections.length; i++) {
+      observer.observe(sections[i]);
+    }
+  },
+  methods: {
+    handleIntersection(entries: IntersectionObserverEntry[]) {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          this.currentSection = entry.target.id;
+          break;
+        }
+      }
+    },
+  },
 };
 </script>
+
+<!-- var canvas = false;
+    dispatchEvent(new CustomEvent('draw', {}));
+    canvas = true; -->
 
 <style scoped>
 @charset "UTF-8";
@@ -194,7 +219,7 @@ export default {
 .section {
   width: 100%;
   height: auto;
-  min-height: 100%;
+  min-height: 100vh;
   padding: 0.75em 1.5em;
   background-color: #fafafa;
   display: flex;
