@@ -140,7 +140,7 @@
           </div>
         </a>
       </div>
-      <canvas id="congrats" width="100%" height="100%"></canvas>
+      <SmileCanvas :draw="displayCanvas" v-if="displayCanvas" id="congrats" />
     </div>
   </div>
 </template>
@@ -150,10 +150,13 @@ declare interface StringObject {
   [key: string]: any;
 }
 
-import strings from "../assets/strings.json";
+import SmileCanvas from "../components/SmileCanvas.vue";
+import AppStrings from "../assets/strings.json";
 
 export default {
-  components: {},
+  components: {
+    SmileCanvas,
+  },
   props: {
     lang: {
       type: String,
@@ -163,8 +166,9 @@ export default {
   emits: ["toggleLang"],
   data() {
     return {
-      strings: strings as StringObject,
+      strings: AppStrings as StringObject,
       currentSection: "welcome",
+      displayCanvas: false,
     };
   },
   computed: {
@@ -195,6 +199,11 @@ export default {
       for (const entry of entries) {
         if (entry.isIntersecting) {
           this.currentSection = entry.target.id;
+
+          if (this.currentSection === "interview" && !this.displayCanvas) {
+            this.displayCanvas = true;
+          }
+
           break;
         }
       }
@@ -202,10 +211,6 @@ export default {
   },
 };
 </script>
-
-<!-- var canvas = false;
-    dispatchEvent(new CustomEvent('draw', {}));
-    canvas = true; -->
 
 <style scoped>
 @charset "UTF-8";
