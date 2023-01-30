@@ -3,7 +3,6 @@
 </template>
 
 <script lang="ts">
-import { useRoute } from "vue-router";
 import config from "./stores/config.json";
 
 export default {
@@ -14,8 +13,7 @@ export default {
   },
   computed: {},
   mounted() {
-    const route = useRoute();
-    const targetLang = (route.params.lang as string).toLowerCase() || "";
+    const targetLang = (this.$route.params.lang as string).toLowerCase() || "";
     if (
       targetLang &&
       targetLang !== this.lang &&
