@@ -1,6 +1,6 @@
 {
   "name": "resume-vue",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "dev": "vite",
@@ -13,7 +13,7 @@
     "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "update": "ncu -u && npm install && npm update && npm audit fix",
-    "commit": "git add . && git commit -m",
+    "commit": "npm version patch --no-git-tag-version && git add . && git commit -m",
     "push": "git pull && git push",
     "deploy": "bash deploy.sh"
   },

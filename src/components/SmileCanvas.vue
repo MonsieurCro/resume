@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts">
-import smile from "../assets/smile.svg";
+import smileImg from "../assets/smile.svg";
 
 export default {
   components: {},
@@ -17,155 +17,155 @@ export default {
   emits: [],
   data() {
     return {
-      drawnCanvas: false,
+      config: {
+        emojis: 0,
+        gravity: 0.2,
+        friction: 0.001,
+      },
+      drawn: false,
+      emojis: [] as any[],
     };
   },
-  computed: {},
+  computed: {
+    canvas() {
+      return this.$refs.canvas as HTMLCanvasElement;
+    },
+    context() {
+      return this.canvas.getContext("2d") as CanvasRenderingContext2D;
+    },
+    image() {
+      const image = new Image() as HTMLImageElement;
+      image.src = smileImg;
+      return image;
+    },
+  },
   mounted() {
-    const canvas = this.$refs.canvas as HTMLCanvasElement;
-    this.drawCanvas(canvas);
+    if (this.drawn) return;
+
+    this.resizeCanvas(this.canvas);
+
+    window.addEventListener("resize", () => this.resizeCanvas(this.canvas));
+    window.addEventListener("orientationchange", () =>
+      this.resizeCanvas(this.canvas)
+    );
+
+    this.generateEmojis();
+
+    this.canvas.addEventListener("click", (e) => {
+      const clickX =
+        e.pageX - (this.canvas.getBoundingClientRect().left + window.scrollX);
+      const clickY =
+        e.pageY - (this.canvas.getBoundingClientRect().top + window.scrollY);
+
+      for (let i = 0; i < this.emojis.length; i++) {
+        const emoji = this.emojis[i];
+        if (
+          clickY >= emoji.y - emoji.size / 2 &&
+          clickY <= emoji.y + emoji.size / 2 &&
+          clickX >= emoji.x - emoji.size / 2 &&
+          clickX <= emoji.x + emoji.size / 2
+        ) {
+          emoji.speedY = 10 + Math.abs(emoji.speedY);
+          emoji.speedY /= emoji.elasticity;
+        }
+      }
+    });
   },
   methods: {
-    drawCanvas(canvas: HTMLCanvasElement) {
-      if (this.drawnCanvas) return;
-      this.drawnCanvas = true;
+    resizeCanvas(container: HTMLCanvasElement) {
+      this.canvas.width = container.offsetWidth;
+      this.canvas.height = container.offsetHeight;
+    },
+    generateEmojis() {
+      this.config.emojis = Math.ceil(
+        Math.max(this.canvas.width, this.canvas.height) / 50
+      );
+      this.emojis = [];
 
-      //////
-
-      const context = canvas.getContext("2d") as CanvasRenderingContext2D;
-      const image = new Image();
-
-      const emojis: any[] = [];
-      var emojiCount = 0;
-      const gravity = 0.1;
-      // const friction = .001;
-
-      // Canvas (re)size
-      function resize(container: HTMLCanvasElement) {
-        canvas.width = container.offsetWidth;
-        canvas.height = container.offsetHeight;
-      }
-      // Define elements
-      function init() {
-        emojiCount =
-          Math.ceil(canvas.width / 25) < 25 ? Math.ceil(canvas.width / 25) : 25;
-
-        for (var i = 0; i < emojiCount; i++) {
-          var x = Math.floor(Math.random() * canvas.width);
-          var y = Math.floor(canvas.height);
-          var size = 25 + Math.random() * (canvas.width / 20);
-          var speed = 2 + Math.random();
-          var angle = Math.random() * -45 * (Math.PI / 180);
-          var side = (Math.floor(Math.random() - 0.5) + 0.5) * 2;
-          var rotation = Math.random() * angle * side;
-          var speedX = (3 + Math.cos(angle) * speed) * side;
-          var speedY = 13 + Math.sin(angle) * speed;
-          var elasticity = 0.5 + Math.random() / 4;
-
-          emojis.push({
-            x: x,
-            y: y,
-            size: size,
-            rotation: rotation,
-            speedX: speedX,
-            speedY: speedY,
-            elasticity: elasticity,
-          });
-        }
-      }
-      // Render
-      function draw() {
-        // Clean Canvas
-        context?.clearRect(0, 0, canvas.width, canvas.height);
-        // Add elements
-        for (var i = 0; i < emojiCount; i++) {
-          var emoji = emojis[i];
-          // Rotate and draw
-          context?.translate(emoji.x, emoji.y);
-          context?.rotate(emoji.rotation);
-          context?.drawImage(
-            image,
-            -emoji.size / 2,
-            -emoji.size / 2,
-            emoji.size,
-            emoji.size
-          );
-          context?.rotate(-emoji.rotation);
-          context?.translate(-emoji.x, -emoji.y);
-          // Move
-          //emoji.speedX -= emoji.speedX * friction;
-          emoji.speedY += gravity;
-          emoji.x += emoji.speedX;
-          emoji.y += emoji.speedY;
-          // Bounce
-          if (
-            emoji.x + emoji.size / 2 >= canvas.width ||
-            emoji.x - emoji.size / 2 <= 0
-          ) {
-            emoji.speedX = -emoji.speedX;
-            emoji.speedX *= emoji.elasticity;
-          }
-          if (
-            emoji.y + emoji.size / 2 >= canvas.height ||
-            emoji.y - emoji.size / 2 <= 0
-          ) {
-            emoji.speedY = -emoji.speedY;
-            emoji.speedY *= emoji.elasticity;
-          }
-          // Stop
-          if (emoji.x - emoji.size / 2 <= 0) {
-            emoji.x = emoji.size / 2;
-          }
-          if (emoji.x + emoji.size / 2 >= canvas.width) {
-            emoji.x = canvas.width - emoji.size / 2;
-          }
-          if (emoji.y - emoji.size / 2 <= 0) {
-            emoji.y = emoji.size / 2;
-          }
-          if (emoji.y + emoji.size / 2 >= canvas.height) {
-            emoji.y = canvas.height - emoji.size / 2;
-          }
-          // Animate
-          context?.beginPath();
-          context?.arc(emoji.x, emoji.y, emoji.size, 0, Math.PI * 2);
-        }
-        requestAnimationFrame(draw);
+      for (let i = 0; i < this.config.emojis; i++) {
+        this.emojis.push({
+          x: Math.floor(Math.random() * this.canvas.width),
+          y: Math.floor(this.canvas.height),
+          size: Math.ceil(
+            (0.5 + Math.random() / 2) *
+              (Math.min(this.canvas.width, this.canvas.height) / 7.5)
+          ),
+          rotation: (Math.random() * 60 - 30) * (Math.PI / 180),
+          // Between 30° and -30°
+          speedX:
+            (5 + Math.random() * 15) * (Math.floor(Math.random() * 2) || -1),
+          speedY: 5 + Math.random() * 25,
+          elasticity: parseFloat((0.5 + Math.random() / 4).toFixed(2)),
+        });
       }
 
-      //load
-      resize(canvas);
-      init();
-      image.onload = function () {
-        draw();
-      };
-      image.src = smile;
+      this.drawCanvas();
+      this.drawn = true;
+    },
+    drawCanvas() {
+      // Clean Canvas
+      this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
-      window.addEventListener("resize", function () {
-        resize(canvas);
-        init();
-      });
-      window.addEventListener("orientationchange", function () {
-        resize(canvas);
-        init();
-      });
-      canvas.addEventListener("click", function (event) {
-        //mouseover
-        // var clickX =
-        //   event.pageX - (canvas.getBoundingClientRect().left + window.scrollX);
-        var clickY =
-          event.pageY - (canvas.getBoundingClientRect().top + window.scrollY);
+      // Add Emojis
+      for (let i = 0; i < this.emojis.length; i++) {
+        const emoji = this.emojis[i];
 
-        for (var i = 0; i < emojiCount; i++) {
-          var emoji = emojis[i];
-          if (
-            clickY >= emoji.y - emoji.size &&
-            clickY <= emoji.y + emoji.size
-          ) {
-            emoji.speedY = Math.abs(emoji.speedY) + Math.random() * 5;
-            emoji.speedY /= emoji.elasticity;
-          }
+        // Transform, draw, reset
+        this.context.translate(emoji.x, emoji.y);
+        this.context.rotate(emoji.rotation);
+        this.context.drawImage(
+          this.image,
+          -emoji.size / 2,
+          -emoji.size / 2,
+          emoji.size,
+          emoji.size
+        );
+        this.context.rotate(-emoji.rotation);
+        this.context.translate(-emoji.x, -emoji.y);
+
+        // Move
+        emoji.speedX -= this.config.friction;
+        emoji.speedY += this.config.gravity;
+        emoji.x += emoji.speedX;
+        emoji.y += emoji.speedY;
+
+        // Bounce
+        if (
+          emoji.x + emoji.size / 2 >= this.canvas.width ||
+          emoji.x - emoji.size / 2 <= 0
+        ) {
+          emoji.speedX = -emoji.speedX;
+          emoji.speedX *= emoji.elasticity;
         }
-      });
+        if (
+          emoji.y + emoji.size / 2 >= this.canvas.height ||
+          emoji.y - emoji.size / 2 <= 0
+        ) {
+          emoji.speedY = -emoji.speedY;
+          emoji.speedY *= emoji.elasticity;
+        }
+
+        // Walls
+        if (emoji.x - emoji.size / 2 <= 0) {
+          emoji.x = emoji.size / 2;
+        }
+        if (emoji.x + emoji.size / 2 >= this.canvas.width) {
+          emoji.x = this.canvas.width - emoji.size / 2;
+        }
+        if (emoji.y - emoji.size / 2 <= 0) {
+          emoji.y = emoji.size / 2;
+        }
+        if (emoji.y + emoji.size / 2 >= this.canvas.height) {
+          emoji.y = this.canvas.height - emoji.size / 2;
+        }
+
+        // Animate
+        this.context.beginPath();
+        this.context.arc(emoji.x, emoji.y, emoji.size, 0, Math.PI * 2);
+      }
+
+      // Loop
+      requestAnimationFrame(() => this.drawCanvas());
     },
   },
 };
