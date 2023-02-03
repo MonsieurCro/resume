@@ -90,8 +90,7 @@ export default {
             (0.5 + Math.random() / 2) *
               (Math.min(this.canvas.width, this.canvas.height) / 7.5)
           ),
-          rotation: (Math.random() * 60 - 30) * (Math.PI / 180),
-          // Between 30° and -30°
+          rotation: (Math.random() * 90 - 45) * (Math.PI / 180), // Between 45° and -45°
           speedX:
             (5 + Math.random() * 15) * (Math.floor(Math.random() * 2) || -1),
           speedY: 5 + Math.random() * 25,

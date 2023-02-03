@@ -22,7 +22,8 @@
           "dates": "Jan&nbsp;2018&nbsp;-&nbsp;Present",
           "content": [
             "Scope project requirements, develop a detailed project plan, monitor progress and ensure timing and quality standards;","Highlight potential risks and seek improvement opportunities;",
-            "Collaborate with internal and external teams to design, develop and implement end-to-end digital projects;","Monitor, report and provide customer support."
+            "Collaborate with internal and external teams to design, develop and implement end-to-end digital projects;",
+            "Monitor, report and provide customer support."
           ]
         },
         {
@@ -112,7 +113,8 @@
             "fab fa-html5",
             "fab fa-css3-alt",
             "fab fa-js-square",
-            "fab fa-vuejs"
+            "fab fa-vuejs",
+            "fa-brands fa-node-js"
           ]
         },
         {
@@ -186,7 +188,7 @@
       "phone": "+32491401719",
       "mail": "corentin.trempont@outlook.com",
       "linkedin": "corentin-trempont",
-      "pdf": "Aussi téléchargeable en PDF !"
+      "pdf": "Aussi disponible en PDF !"
     },
     "about": {
       "title": "À&nbsp;propos",
@@ -203,7 +205,7 @@
           "content": [
             "Définir les spécifications du projet, élaborer un plan de projet détaillé, suivre les progrès et assurer le respect des délais et des normes de qualité&nbsp;;",
             "Mettre en évidence les risques potentiels et rechercher les possibilités d'amélioration&nbsp;;",
-            "Collaborer avec les équipes internes et externes pour concevoir, développer et mettre en œuvre des projets numériques de bout en bout&nbsp;",
+            "Collaborer avec les équipes internes et externes pour concevoir, développer et mettre en œuvre des projets numériques de bout en bout&nbsp;;",
             "Contrôler, rapporter et fournir une assistance aux clients."
           ]
         },
@@ -294,7 +296,8 @@
             "fab fa-html5",
             "fab fa-css3-alt",
             "fab fa-js-square",
-            "fab fa-vuejs"
+            "fab fa-vuejs",
+            "fa-brands fa-node-js"
           ]
         },
         {
