@@ -6,8 +6,8 @@
     </div>
 
     <div id="journey">
-      <a v-for="(item, key, index) in text" :key="index" :href="'#' + key" class="bigger" :class="{ 'current' : String(key) === currentSection }">
-        <span class="smaller" v-html="item.title"></span>&nbsp;<i :class="[ index === Object.keys(text).length -1 ? 'fa-check-circle' : 'fa-circle', String(key) === currentSection ? 'fas' : 'far' ]"></i>
+      <a v-for="(item, index) in Object.keys(text)" :key="index" :href="'#' + item" class="bigger" :class="{ 'current' : String(item) === currentSection }">
+        <span class="smaller" v-html="text[item].title"></span>&nbsp;<i :class="[ index === Object.keys(text).length -1 ? 'fa-check-circle' : 'fa-circle', String(item) === currentSection ? 'fas' : 'far' ]"></i>
       </a>
     </div>
 
@@ -83,7 +83,7 @@ export default {
     );
     const sections = container.getElementsByClassName("section");
     for (let i = 0; i < sections.length; i++) {
-      observer.observe(sections[i]);
+      if (sections[i]) observer.observe(sections[i] as Element);
     }
   },
   methods: {
